@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MOW Wake County — Meal Delivery + Browse Menus</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+/* Page-specific styles */
+.creative-icon{width:36px;height:36px;border-radius:50%;background:var(--cyan);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.creative-icon svg{width:18px;height:18px;fill:var(--white)}
+.video-card{background:var(--navy);border-radius:12px;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:transform .2s}
+.video-card:hover{transform:translateY(-3px)}
+.video-play{width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,.15);border:2px solid rgba(255,255,255,.5);display:flex;align-items:center;justify-content:center;position:relative;z-index:2}
+.video-play::after{content:'';width:0;height:0;border-left:18px solid var(--white);border-top:11px solid transparent;border-bottom:11px solid transparent;margin-left:4px}
+.video-label{position:absolute;bottom:16px;left:20px;z-index:2;font-family:var(--font-head);font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:2px;color:rgba(255,255,255,.6)}
+.program-toggles{display:flex;gap:12px;margin-bottom:32px;flex-wrap:wrap}
+.program-toggle{font-family:var(--font-head);font-weight:800;font-size:11px;text-transform:uppercase;letter-spacing:1.5px;padding:12px 20px;border-radius:8px;border:2px solid var(--gray-mid);background:var(--white);color:var(--navy);cursor:pointer;transition:all .2s}
+.program-toggle.active{background:var(--lime);border-color:var(--lime);color:var(--navy)}
+.program-toggle:hover{border-color:var(--cyan)}
+.program-card{background:var(--white);border-radius:12px;box-shadow:0 2px 16px rgba(0,0,0,.06);overflow:hidden;margin-bottom:24px}
+.program-card-inner{display:grid;grid-template-columns:1.2fr 1fr;gap:0}
+.program-card-content{padding:32px 28px;display:flex;flex-direction:column;justify-content:center}
+.program-card-content h3{font-family:var(--font-head);font-weight:900;font-size:18px;color:var(--navy);text-transform:uppercase;letter-spacing:2px;margin-bottom:16px}
+.carousel-container{position:relative;overflow:hidden}
+.carousel-track{display:flex;gap:16px}
+.carousel-card{flex:0 0 calc(33.333% - 11px);border-radius:10px;overflow:hidden;position:relative}
+.carousel-peek{flex:0 0 60px;border-radius:10px;overflow:hidden;position:relative;opacity:.5}
+.carousel-arrow{position:absolute;right:16px;top:50%;transform:translateY(-50%);width:36px;height:36px;border-radius:50%;background:var(--white);box-shadow:0 2px 8px rgba(0,0,0,.15);display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:2;font-family:var(--font-head);font-weight:900;color:var(--navy);font-size:16px}
+.progress-bar{display:flex;gap:6px;justify-content:center;margin-top:16px}
+.progress-dot{width:8px;height:8px;border-radius:50%;background:var(--gray-mid);opacity:.3}
+.progress-dot.active{background:var(--cyan);opacity:1}
+</style>
+</head>
+<body>
+
+<!-- Accessibility Widget -->
+<div class="a11y-widget" title="Accessibility Options">
+<svg width="28" height="28" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="3.5" r="2.3"/>
+<path d="M4.8 9.8L6.2 12C7.6 11.1 9.7 10.5 12 10.5s4.4.6 5.8 1.5l1.4-2.2C17.5 8.8 14.8 8 12 8s-5.5.8-7.2 1.8z"/>
+<path d="M10.2 12.5L8.5 20h2.2l1.3-4.2L10.2 12.5z"/>
+<path d="M13.8 12.5l1.7 7.5h-2.2l-1.3-4.2 1.8-3.3z"/>
+<rect x="9" y="11.5" width="6" height="2" rx="1"/>
+</svg>
+</div>
+
+<!-- Navbar -->
+<nav class="navbar">
+<div class="nav-inner">
+<a href="About_Us-OurMission_Confirm.html" class="nav-logo-box">Meals on Wheels<br>Wake County</a>
+<div class="nav-center">
+<div class="nav-item"><a href="About_Us-OurMission_Confirm.html">About Us <span class="diamond"></span></a>
+<div class="dropdown">
+<a href="About_Us-OurMission_Confirm.html"><span class="diamond"></span> Our Mission</a>
+<a href="About_Us-StaffAndBoard_Confirm.html"><span class="diamond"></span> Staff and Board</a>
+<a href="About_Us-OurImpact_Confirm.html"><span class="diamond"></span> Our Impact</a>
+<a href="About_Us-AnnualReports_Confirm.html"><span class="diamond"></span> Annual Reports</a>
+</div></div>
+<div class="nav-item active"><a href="Get_Meals-Meal_Delivery_Confirm.html">Get Meals <span class="diamond"></span></a>
+<div class="dropdown">
+<a href="Get_Meals-Meal_Delivery_Confirm.html" class="active-child"><span class="diamond"></span> Meal Delivery — Browse Menu</a>
+<a href="Get_Meals-Friendship_Cafe_Confirm.html"><span class="diamond"></span> Friendship Cafe</a>
+<a href="Get_Meals-Application_Services_Confirm.html"><span class="diamond"></span> Apply to Services</a>
+<a href="Get_Meals-Client_Resources_Confirm.html"><span class="diamond"></span> Client Resources</a>
+</div></div>
+<div class="nav-item"><a href="Volunteer-Individual_Oppurtunities_Confirm.html">Volunteer With Us <span class="diamond"></span></a>
+<div class="dropdown">
+<a href="Volunteer-Individual_Oppurtunities_Confirm.html"><span class="diamond"></span> Individual Opportunities</a>
+<a href="Volunteer-Group_Oppurtunities_Confirm.html"><span class="diamond"></span> Group Opportunities</a>
+<a href="Volunteer-Volunteer_Application_Draft.html"><span class="diamond"></span> Apply to Volunteer</a>
+<a href="Volunteer-Volunteer_Resources_Confirm.html"><span class="diamond"></span> Volunteer Resources</a>
+</div></div>
+<div class="nav-item"><a href="#">Ways to Give <span class="diamond"></span></a>
+<div class="dropdown">
+<a href="#"><span class="diamond"></span> Donate</a>
+<a href="#"><span class="diamond"></span> Monthly Giving</a>
+<a href="#"><span class="diamond"></span> Planned Giving</a>
+</div></div>
+<div class="nav-item"><a href="News-Direct_Confirm.html">News <span class="diamond"></span></a>
+<div class="dropdown">
+<a href="News-Government_Impact_Confirm.html"><span class="diamond"></span> Government Impact</a>
+<a href="News-Events_Confirm.html"><span class="diamond"></span> Events</a>
+</div></div>
+</div>
+<div class="nav-ctas"><a href="#" class="btn btn-donate">Donate</a><a href="Volunteer-Individual_Oppurtunities_Confirm.html" class="btn btn-volunteer">Volunteer</a></div>
+</div>
+</nav>
+
+<div class="page">
+
+<!-- Hero -->
+<div class="hero-card">
+<div class="hero-x"></div>
+<div class="hero-label"><h1>Meal Delivery</h1></div>
+</div>
+
+<!-- What Exactly Is Meals on Wheels — Text left + Video previews right -->
+<div class="section">
+<div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
+<div class="creative-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="white" stroke-width="2"/><polygon points="10,8 16,12 10,16" fill="white"/></svg></div>
+<div class="section-title" style="margin-bottom:0">What Exactly Is Meals on Wheels</div>
+</div>
+
+<div style="display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:start">
+<!-- Left: Text + Hero Image -->
+<div style="display:flex;flex-direction:column;gap:20px">
+<div>
+<div class="text-lines" style="margin-bottom:16px">
+<div class="tl" style="width:100%"></div><div class="tl" style="width:95%"></div><div class="tl" style="width:90%"></div><div class="tl" style="width:88%"></div><div class="tl" style="width:75%"></div>
+</div>
+<div class="text-lines">
+<div class="tl" style="width:100%"></div><div class="tl" style="width:92%"></div><div class="tl" style="width:85%"></div><div class="tl" style="width:65%"></div>
+</div>
+</div>
+<div class="img-placeholder" style="flex:1;min-height:120px"><span>Meals on Wheels Hero</span></div>
+</div>
+<!-- Right: 2 small video preview cards stacked -->
+<div style="display:flex;flex-direction:column;gap:14px">
+<div class="video-card" style="aspect-ratio:1.8/1">
+<div class="hero-x"></div>
+<div class="video-play" style="width:40px;height:40px"></div>
+<div class="video-label" style="font-size:9px">Video — Vimeo Embed</div>
+</div>
+<div class="video-card" style="aspect-ratio:1.8/1">
+<div class="hero-x"></div>
+<div class="video-play" style="width:40px;height:40px"></div>
+<div class="video-label" style="font-size:9px">Video — Vimeo Embed</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- KPI + Eligibility Quiz -->
+<div class="section">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center">
+<div class="kpi-box">
+<div class="kpi-num">1,500+</div>
+<div class="kpi-label">Meals Delivered Daily</div>
+</div>
+<div style="display:flex;align-items:center;gap:16px;background:var(--white);border-radius:12px;padding:28px 24px;box-shadow:0 2px 16px rgba(0,0,0,.06)">
+<div class="creative-icon" style="width:48px;height:48px"><svg viewBox="0 0 24 24" width="22" height="22"><circle cx="11" cy="11" r="7" fill="none" stroke="white" stroke-width="2"/><path d="M16 16l4 4" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
+<div>
+<h4 style="font-family:var(--font-head);font-weight:900;font-size:16px;color:var(--navy);text-transform:uppercase;letter-spacing:2px;margin-bottom:6px">Am I Eligible?</h4>
+<a href="#" class="cta-btn cta-primary" style="font-size:11px;padding:10px 20px">Take Our Eligibility Quiz →</a>
+</div>
+</div>
+</div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- Browse Our Programs and Menus -->
+<div class="section">
+<div class="section-title">Browse Our Programs and Menus</div>
+
+<!-- Text left + Need Help card right -->
+<div style="display:grid;grid-template-columns:1.2fr 1fr;gap:24px;margin-bottom:28px;align-items:start">
+<div>
+<div class="text-lines" style="margin-bottom:14px">
+<div class="tl" style="width:100%"></div><div class="tl" style="width:95%"></div><div class="tl" style="width:88%"></div><div class="tl" style="width:92%"></div><div class="tl" style="width:78%"></div>
+</div>
+<div class="text-lines">
+<div class="tl" style="width:100%"></div><div class="tl" style="width:85%"></div><div class="tl" style="width:65%"></div>
+</div>
+</div>
+<div style="background:var(--white);border-radius:12px;padding:24px 28px;box-shadow:0 2px 16px rgba(0,0,0,.06)">
+<div style="font-family:var(--font-head);font-weight:800;font-size:14px;color:var(--navy);margin-bottom:8px">Need help deciding which program fits you best?</div>
+<div class="text-lines" style="margin-bottom:14px"><div class="tl" style="width:60%"></div></div>
+<a href="#" class="cta-btn cta-primary" style="font-size:11px;padding:10px 20px">Contact Us →</a>
+</div>
+</div>
+
+<!-- Program Toggle Buttons — Card-sized, centered -->
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:32px">
+<div class="program-toggle active" style="text-align:center;padding:24px 16px;border-radius:10px;display:flex;align-items:center;justify-content:center;min-height:70px">Hot Meal Program</div>
+<div class="program-toggle" style="text-align:center;padding:24px 16px;border-radius:10px;display:flex;align-items:center;justify-content:center;min-height:70px">Frozen Meal Program</div>
+<div class="program-toggle" style="text-align:center;padding:24px 16px;border-radius:10px;display:flex;align-items:center;justify-content:center;min-height:70px">Supplemental Options</div>
+</div>
+
+<!-- COMBINED CARD 1: Selected Meal Program + Browse/Download + Sample Meals -->
+<div style="background:var(--white);border-radius:12px;box-shadow:0 2px 16px rgba(0,0,0,.06);overflow:hidden;margin-bottom:0">
+
+<!-- Program Card header -->
+<div style="display:grid;grid-template-columns:1.2fr 1fr;gap:0">
+<div style="padding:32px 28px;display:flex;flex-direction:column;justify-content:center">
+<h3 style="font-family:var(--font-head);font-weight:900;font-size:18px;color:var(--navy);text-transform:uppercase;letter-spacing:2px;margin-bottom:16px">Selected Meal Program</h3>
+<div class="text-lines" style="margin-bottom:16px">
+<div class="tl" style="width:100%"></div><div class="tl" style="width:88%"></div><div class="tl" style="width:72%"></div>
+</div>
+<a href="#" class="cta-btn cta-primary" style="align-self:flex-start;font-size:11px;padding:10px 20px">Month's Menu →</a>
+</div>
+<div class="img-placeholder" style="min-height:240px;border-radius:0 12px 0 0"><span>Program Photo</span></div>
+</div>
+
+<!-- Browse + Download -->
+<div style="padding:24px 28px 0;display:flex;align-items:center;gap:12px">
+<div class="creative-icon"><svg viewBox="0 0 24 24"><path d="M12 2v12m0 0l-4-4m4 4l4-4M4 18h16" stroke="white" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div>
+<div style="font-family:var(--font-head);font-weight:800;font-size:13px;color:var(--navy);text-transform:uppercase;letter-spacing:1.5px">Browse and Download This Program's Menu</div>
+</div>
+
+<!-- Sample Meals Carousel -->
+<div style="padding:20px 28px 28px">
+<div style="font-family:var(--font-head);font-weight:900;font-size:14px;color:var(--navy);text-transform:uppercase;letter-spacing:2px;margin-bottom:14px">Sample Meals Available With This Program</div>
+<div class="carousel-container">
+<div class="carousel-track">
+<div class="carousel-card"><div class="img-placeholder" style="aspect-ratio:1/1"><span>Meal Photo</span></div></div>
+<div class="carousel-card"><div class="img-placeholder" style="aspect-ratio:1/1"><span>Meal Photo</span></div></div>
+<div class="carousel-card"><div class="img-placeholder" style="aspect-ratio:1/1"><span>Meal Photo</span></div></div>
+<div class="carousel-peek"><div class="img-placeholder" style="aspect-ratio:1/1"><span></span></div></div>
+</div>
+<div class="carousel-arrow">→</div>
+<div class="progress-bar">
+<div class="progress-dot active"></div>
+<div class="progress-dot"></div>
+<div class="progress-dot"></div>
+<div class="progress-dot"></div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- COMBINED CARD 2: Eligibility + Nutritional Value + More Info -->
+<div class="section">
+<div style="background:var(--white);border-radius:12px;box-shadow:0 2px 16px rgba(0,0,0,.06);overflow:hidden;padding:32px 28px">
+
+<!-- Eligibility + Nutritional Value side by side -->
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:28px">
+<div>
+<h4 style="font-family:var(--font-head);font-weight:900;font-size:15px;color:var(--navy);text-transform:uppercase;letter-spacing:2px;margin-bottom:12px">Eligibility</h4>
+<div class="text-lines">
+<div class="tl" style="width:100%"></div><div class="tl" style="width:92%"></div><div class="tl" style="width:85%"></div><div class="tl" style="width:70%"></div>
+</div>
+</div>
+<div>
+<h4 style="font-family:var(--font-head);font-weight:900;font-size:15px;color:var(--navy);text-transform:uppercase;letter-spacing:2px;margin-bottom:12px">Nutritional Value</h4>
+<div class="text-lines">
+<div class="tl" style="width:100%"></div><div class="tl" style="width:88%"></div><div class="tl" style="width:92%"></div><div class="tl" style="width:65%"></div>
+</div>
+</div>
+</div>
+
+<div style="height:1px;background:var(--gray-light);margin-bottom:28px"></div>
+
+<!-- More Information — expanded with extra paragraphs -->
+<div style="display:grid;grid-template-columns:1.2fr 1fr;gap:24px;align-items:start">
+<div>
+<div class="text-lines" style="margin-bottom:16px">
+<div class="tl" style="width:100%"></div><div class="tl" style="width:95%"></div><div class="tl" style="width:88%"></div><div class="tl" style="width:80%"></div>
+</div>
+<div class="text-lines" style="margin-bottom:16px">
+<div class="tl" style="width:100%"></div><div class="tl" style="width:90%"></div><div class="tl" style="width:85%"></div><div class="tl" style="width:92%"></div><div class="tl" style="width:72%"></div>
+</div>
+<div class="text-lines" style="margin-bottom:20px">
+<div class="tl" style="width:100%"></div><div class="tl" style="width:88%"></div><div class="tl" style="width:60%"></div>
+</div>
+<a href="#" class="cta-btn cta-primary" style="font-size:11px;padding:10px 20px">More Information →</a>
+</div>
+<div class="img-placeholder" style="aspect-ratio:1.2/1"><span>Program Detail</span></div>
+</div>
+
+</div>
+</div>
+
+<!-- Waitlist Section -->
+<div style="margin-bottom:32px">
+<div class="section-title" style="font-size:18px">Waitlist for Meals on Wheels</div>
+<div class="text-lines" style="margin-bottom:12px">
+<div class="tl" style="width:100%"></div><div class="tl" style="width:95%"></div><div class="tl" style="width:90%"></div><div class="tl" style="width:88%"></div><div class="tl" style="width:72%"></div>
+</div>
+<div class="text-lines">
+<div class="tl" style="width:100%"></div><div class="tl" style="width:92%"></div><div class="tl" style="width:85%"></div><div class="tl" style="width:60%"></div>
+</div>
+</div>
+
+<!-- Government Funding Impact -->
+<div class="info-box" style="border-left:4px solid var(--coral)">
+<h4 style="color:var(--coral)">How Government Funding Has Impacted Us</h4>
+<div class="text-lines" style="margin-bottom:20px">
+<div class="tl" style="width:100%"></div><div class="tl" style="width:90%"></div><div class="tl" style="width:85%"></div><div class="tl" style="width:65%"></div>
+</div>
+<div style="text-align:center">
+<a href="#" class="cta-btn cta-secondary" style="font-size:11px;padding:10px 24px">Learn More →</a>
+</div>
+</div>
+
+<hr class="dashed-break">
+
+<!-- FAQ -->
+<div class="faq-section" style="margin-bottom:48px">
+<div class="section-title" style="margin-bottom:20px">Frequently Asked Questions</div>
+<div class="faq-item">
+<div class="faq-q">How do I sign up for meal delivery?</div>
+<div class="faq-a"><div class="text-lines"><div class="tl" style="width:100%"></div><div class="tl" style="width:85%"></div><div class="tl" style="width:60%"></div></div></div>
+</div>
+<div class="faq-item">
+<div class="faq-q">What types of meals are available?</div>
+<div class="faq-a"><div class="text-lines"><div class="tl" style="width:100%"></div><div class="tl" style="width:90%"></div><div class="tl" style="width:70%"></div></div></div>
+</div>
+<div class="faq-item">
+<div class="faq-q">Can I choose between hot and frozen meals?</div>
+<div class="faq-a"><div class="text-lines"><div class="tl" style="width:100%"></div><div class="tl" style="width:88%"></div><div class="tl" style="width:55%"></div></div></div>
+</div>
+<div class="faq-item">
+<div class="faq-q">Is there a cost for meal delivery services?</div>
+<div class="faq-a"><div class="text-lines"><div class="tl" style="width:100%"></div><div class="tl" style="width:82%"></div><div class="tl" style="width:65%"></div></div></div>
+</div>
+</div>
+
+<!-- Get Meals Now -->
+<div class="section">
+<div class="section-title">Get Meals Now</div>
+<div class="text-lines" style="margin-bottom:24px">
+<div class="tl" style="width:80%"></div><div class="tl" style="width:60%"></div>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+<a href="#" class="cta-btn cta-secondary" style="justify-content:center;padding:18px 28px">Explore Friendship Cafes →</a>
+<a href="#" class="cta-btn cta-primary" style="justify-content:center;padding:18px 28px">Apply / Sign Up for Meals on Wheels →</a>
+</div>
+</div>
+
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+<div class="footer-top">
+<div class="footer-logos"><div class="footer-logo-box flw">Meals on Wheels<br>Wake County</div><div class="footer-logo-box fln">MOW<br>National</div></div>
+<div class="footer-contact"><p><span class="fc-icon">✉</span> Mailing Address:<br>1001 Blair Drive<br>Raleigh, NC 27603</p><p style="margin-top:10px"><span class="fc-icon">☏</span> (919) 735-1660</p></div>
+<div class="footer-nl"><h4>Our Newsletter</h4><div class="text-lines" style="margin-bottom:14px"><div class="tl" style="background:rgba(255,255,255,.15)"></div><div class="tl" style="background:rgba(255,255,255,.15);width:80%"></div></div><div class="nl-row"><input type="email" placeholder="Your email address"><button>Subscribe</button></div></div>
+<div style="display:flex;flex-direction:column;gap:12px;align-items:flex-end"><a href="#" class="cta-btn cta-primary" style="width:100%;justify-content:center;font-size:11px;padding:12px 20px">Make a Donation</a><a href="Volunteer-Individual_Oppurtunities_Confirm.html" class="cta-btn cta-secondary" style="width:100%;justify-content:center;font-size:11px;padding:12px 20px">Volunteer With Us</a></div>
+</div>
+<div class="footer-div"><hr></div>
+<div class="footer-mid"><div class="footer-left"><div class="footer-ein">EIN: 56-0891672 (IRS #)</div><div class="footer-socials"><div class="fsoc"><span>fb</span></div><div class="fsoc"><span>ig</span></div><div class="fsoc"><span>in</span></div><div class="fsoc"><span>yt</span></div></div></div></div>
+<div class="footer-bottom"><p>© 2026 Meals on Wheels — Wake County. All Rights Reserved. | Website by: Cary Digital Design</p></div>
+</footer>
+<script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MOW Wake County — Annual Reports</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+/* Page-specific styles */
+.creative-icon{width:36px;height:36px;border-radius:50%;background:var(--cyan);display:flex;align-items:center;justify-content:center;position:absolute;top:16px;left:16px;z-index:3}
+.creative-icon svg{width:18px;height:18px;fill:var(--white)}
+.kpi-image-card{position:relative;border-radius:12px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:var(--gray-light)}
+.kpi-image-card::before,.kpi-image-card::after{content:'';position:absolute;width:141%;height:1px;background:var(--gray-mid);opacity:.4}
+.kpi-image-card::before{transform:rotate(25deg)}
+.kpi-image-card::after{transform:rotate(-25deg)}
+.kpi-image-overlay{position:relative;z-index:1;text-align:center}
+.report-row{display:grid;grid-template-columns:1fr 1.4fr;gap:24px;margin-bottom:32px;align-items:stretch}
+.small-kanban-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:32px}
+.small-kanban-card{position:relative;border-radius:10px;overflow:hidden;aspect-ratio:1.2/1;display:flex;align-items:flex-end;cursor:pointer;transition:transform .2s}
+.small-kanban-card:hover{transform:translateY(-4px)}
+.small-kanban-card .creative-icon{width:28px;height:28px;top:10px;left:10px}
+.small-kanban-card .creative-icon svg{width:14px;height:14px}
+.small-kanban-label{font-family:var(--font-head);font-weight:700;font-size:10px;color:var(--white);text-transform:uppercase;letter-spacing:1.5px;opacity:.9}
+.strategic-hero{position:relative;width:100%;aspect-ratio:2.2/1;background:var(--navy);border-radius:12px;overflow:hidden;display:flex;align-items:flex-end;margin-bottom:0;opacity:.55;cursor:not-allowed}
+.strategic-label{position:relative;z-index:2;padding:28px 36px;width:100%;display:flex;justify-content:space-between;align-items:flex-end}
+.strategic-label h2{font-family:var(--font-head);font-weight:900;font-size:24px;color:var(--white);text-transform:uppercase;letter-spacing:3px}
+.strategic-label .coming-soon{font-family:var(--font-head);font-weight:700;font-size:11px;color:var(--coral);text-transform:uppercase;letter-spacing:2px;background:rgba(240,73,37,.15);padding:6px 14px;border-radius:6px}
+</style>
+</head>
+<body>
+
+<!-- Accessibility Widget -->
+<div class="a11y-widget" title="Accessibility Options">
+<svg width="28" height="28" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="3.5" r="2.3"/>
+<path d="M4.8 9.8L6.2 12C7.6 11.1 9.7 10.5 12 10.5s4.4.6 5.8 1.5l1.4-2.2C17.5 8.8 14.8 8 12 8s-5.5.8-7.2 1.8z"/>
+<path d="M10.2 12.5L8.5 20h2.2l1.3-4.2L10.2 12.5z"/>
+<path d="M13.8 12.5l1.7 7.5h-2.2l-1.3-4.2 1.8-3.3z"/>
+<rect x="9" y="11.5" width="6" height="2" rx="1"/>
+</svg>
+</div>
+
+<!-- Navbar -->
+<nav class="navbar">
+<div class="nav-inner">
+<a href="About_Us-OurMission_Confirm.html" class="nav-logo-box">Meals on Wheels<br>Wake County</a>
+<div class="nav-center">
+<div class="nav-item active"><a href="About_Us-OurMission_Confirm.html">About Us <span class="diamond"></span></a>
+<div class="dropdown">
+<a href="About_Us-OurMission_Confirm.html"><span class="diamond"></span> Our Mission</a>
+<a href="About_Us-StaffAndBoard_Confirm.html"><span class="diamond"></span> Staff and Board</a>
+<a href="About_Us-OurImpact_Confirm.html"><span class="diamond"></span> Our Impact</a>
+<a href="About_Us-AnnualReports_Confirm.html" class="active-child"><span class="diamond"></span> Annual Reports</a>
+</div></div>
+<div class="nav-item"><a href="Get_Meals-Meal_Delivery_Confirm.html">Get Meals <span class="diamond"></span></a>
+<div class="dropdown">
+<a href="Get_Meals-Meal_Delivery_Confirm.html"><span class="diamond"></span> Meal Delivery — Browse Menu</a>
+<a href="Get_Meals-Friendship_Cafe_Confirm.html"><span class="diamond"></span> Friendship Cafe</a>
+<a href="Get_Meals-Application_Services_Confirm.html"><span class="diamond"></span> Apply to Services</a>
+<a href="Get_Meals-Client_Resources_Confirm.html"><span class="diamond"></span> Client Resources</a>
+</div></div>
+<div class="nav-item"><a href="Volunteer-Individual_Oppurtunities_Confirm.html">Volunteer With Us <span class="diamond"></span></a>
+<div class="dropdown">
+<a href="Volunteer-Individual_Oppurtunities_Confirm.html"><span class="diamond"></span> Individual Opportunities</a>
+<a href="Volunteer-Group_Oppurtunities_Confirm.html"><span class="diamond"></span> Group Opportunities</a>
+<a href="Volunteer-Volunteer_Application_Draft.html"><span class="diamond"></span> Apply to Volunteer</a>
+<a href="Volunteer-Volunteer_Resources_Confirm.html"><span class="diamond"></span> Volunteer Resources</a>
+</div></div>
+<div class="nav-item"><a href="#">Ways to Give <span class="diamond"></span></a>
+<div class="dropdown">
+<a href="#"><span class="diamond"></span> Donate</a>
+<a href="#"><span class="diamond"></span> Monthly Giving</a>
+<a href="#"><span class="diamond"></span> Planned Giving</a>
+</div></div>
+<div class="nav-item"><a href="News-Direct_Confirm.html">News <span class="diamond"></span></a>
+<div class="dropdown">
+<a href="News-Government_Impact_Confirm.html"><span class="diamond"></span> Government Impact</a>
+<a href="News-Events_Confirm.html"><span class="diamond"></span> Events</a>
+</div></div>
+</div>
+<div class="nav-ctas"><a href="#" class="btn btn-donate">Donate</a><a href="Volunteer-Individual_Oppurtunities_Confirm.html" class="btn btn-volunteer">Volunteer</a></div>
+</div>
+</nav>
+
+<div class="page">
+
+<!-- Hero Card -->
+<div class="hero-card">
+<div class="hero-x"></div>
+<div class="hero-label"><h1>Annual Reports</h1></div>
+</div>
+
+<!-- Section Intro -->
+<div class="section">
+<div class="section-title">Our Reports</div>
+<div class="section-subtitle">Transparency and accountability to our community, donors, and partners</div>
+
+<!-- Quote Block -->
+<div style="display:flex;align-items:center;gap:24px;margin-bottom:48px;padding:0 20px">
+<!-- Circular headshot with cyan border -->
+<div style="width:90px;height:90px;border-radius:50%;background:var(--gray-light);border:3px solid var(--cyan);flex-shrink:0;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center">
+<div style="position:absolute;width:141%;height:1px;background:var(--gray-mid);opacity:.3;transform:rotate(45deg)"></div>
+<div style="position:absolute;width:141%;height:1px;background:var(--gray-mid);opacity:.3;transform:rotate(-45deg)"></div>
+<span style="position:relative;z-index:1;font-family:var(--font-head);font-size:8px;text-transform:uppercase;letter-spacing:1.5px;color:var(--gray-mid);font-weight:700">Photo</span>
+</div>
+<!-- Quote text + name -->
+<div style="flex:1">
+<div style="border-left:3px solid var(--cyan);padding-left:20px">
+<div class="text-lines" style="margin-bottom:12px">
+<div class="tl" style="width:100%"></div><div class="tl" style="width:95%"></div><div class="tl" style="width:88%"></div><div class="tl" style="width:72%"></div>
+</div>
+<div style="display:flex;align-items:center;gap:8px">
+<div style="width:8px;height:8px;background:var(--lime);border-radius:2px;transform:rotate(45deg);flex-shrink:0"></div>
+<div style="height:9px;width:140px;background:var(--navy);border-radius:3px;opacity:.6"></div>
+<div style="height:8px;width:100px;background:var(--gray-mid);border-radius:3px;opacity:.35"></div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- ===== ROW 1: 2024–2025 Annual Report ===== -->
+<div class="report-row">
+<!-- Kanban Card with Creative Icon -->
+<div class="kanban-card" style="aspect-ratio:1.1/1;min-height:260px">
+<div class="img-placeholder" style="aspect-ratio:auto"><span>Report Cover</span></div>
+<div class="kanban-overlay"></div>
+<div class="creative-icon">
+<svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/><polyline points="14 2 14 8 20 8" fill="none" stroke="white" stroke-width="2"/></svg>
+</div>
+<div class="kanban-content">
+<div class="kanban-cta" style="font-size:12px;letter-spacing:1.5px">2024–2025 Annual Report <span style="font-size:16px">→</span></div>
+</div>
+</div>
+<!-- KPI Over Image -->
+<div class="kpi-image-card" style="min-height:260px">
+<div class="kpi-image-overlay">
+<div class="kpi-num">KPI</div>
+<div class="kpi-label">Over Image</div>
+</div>
+</div>
+</div>
+
+<!-- ===== ROW 2: 2023–2024 Annual Report ===== -->
+<div class="report-row">
+<!-- Kanban Card with Creative Icon -->
+<div class="kanban-card" style="aspect-ratio:1.1/1;min-height:260px">
+<div class="img-placeholder" style="aspect-ratio:auto"><span>Report Cover</span></div>
+<div class="kanban-overlay"></div>
+<div class="creative-icon">
+<svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/><polyline points="14 2 14 8 20 8" fill="none" stroke="white" stroke-width="2"/></svg>
+</div>
+<div class="kanban-content">
+<div class="kanban-cta" style="font-size:12px;letter-spacing:1.5px">2023–2024 Annual Report <span style="font-size:16px">→</span></div>
+</div>
+</div>
+<!-- KPI Over Image -->
+<div class="kpi-image-card" style="min-height:260px">
+<div class="kpi-image-overlay">
+<div class="kpi-num">KPI</div>
+<div class="kpi-label">Over Image</div>
+</div>
+</div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ===== ROW 3: Older Reports — 4-up Kanban Grid ===== -->
+<div class="section-title" style="font-size:18px;margin-bottom:20px">Previous Reports</div>
+
+<div class="small-kanban-grid">
+<div>
+<div class="small-kanban-card">
+<div class="img-placeholder" style="aspect-ratio:auto"><span>Cover</span></div>
+<div class="kanban-overlay"></div>
+<div class="creative-icon">
+<svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/><polyline points="14 2 14 8 20 8" fill="none" stroke="white" stroke-width="2"/></svg>
+</div>
+<div class="kanban-content">
+<div class="small-kanban-label">2022–2023</div>
+</div>
+</div>
+<div class="text-lines" style="margin-top:10px">
+<div class="tl" style="width:90%"></div><div class="tl" style="width:70%"></div>
+</div>
+</div>
+
+<div>
+<div class="small-kanban-card">
+<div class="img-placeholder" style="aspect-ratio:auto"><span>Cover</span></div>
+<div class="kanban-overlay"></div>
+<div class="creative-icon">
+<svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/><polyline points="14 2 14 8 20 8" fill="none" stroke="white" stroke-width="2"/></svg>
+</div>
+<div class="kanban-content">
+<div class="small-kanban-label">2021–2022</div>
+</div>
+</div>
+<div class="text-lines" style="margin-top:10px">
+<div class="tl" style="width:85%"></div><div class="tl" style="width:65%"></div>
+</div>
+</div>
+
+<div>
+<div class="small-kanban-card">
+<div class="img-placeholder" style="aspect-ratio:auto"><span>Cover</span></div>
+<div class="kanban-overlay"></div>
+<div class="creative-icon">
+<svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/><polyline points="14 2 14 8 20 8" fill="none" stroke="white" stroke-width="2"/></svg>
+</div>
+<div class="kanban-content">
+<div class="small-kanban-label">2020–2021</div>
+</div>
+</div>
+<div class="text-lines" style="margin-top:10px">
+<div class="tl" style="width:92%"></div><div class="tl" style="width:68%"></div>
+</div>
+</div>
+
+<div>
+<div class="small-kanban-card">
+<div class="img-placeholder" style="aspect-ratio:auto"><span>Cover</span></div>
+<div class="kanban-overlay"></div>
+<div class="creative-icon">
+<svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/><polyline points="14 2 14 8 20 8" fill="none" stroke="white" stroke-width="2"/></svg>
+</div>
+<div class="kanban-content">
+<div class="small-kanban-label">2019–2020</div>
+</div>
+</div>
+<div class="text-lines" style="margin-top:10px">
+<div class="tl" style="width:88%"></div><div class="tl" style="width:72%"></div>
+</div>
+</div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ===== Strategic Report — Currently Unavailable ===== -->
+<div class="section" style="margin-bottom:0">
+<div class="strategic-hero">
+<div class="hero-x"></div>
+<div class="strategic-label">
+<h2>2026–2032 Strategic Report</h2>
+<div class="coming-soon">Currently Unavailable</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+<div class="footer-top">
+<div class="footer-logos"><div class="footer-logo-box flw">Meals on Wheels<br>Wake County</div><div class="footer-logo-box fln">MOW<br>National</div></div>
+<div class="footer-contact"><p><span class="fc-icon">✉</span> Mailing Address:<br>1001 Blair Drive<br>Raleigh, NC 27603</p><p style="margin-top:10px"><span class="fc-icon">☏</span> (919) 735-1660</p></div>
+<div class="footer-nl"><h4>Our Newsletter</h4><div class="text-lines" style="margin-bottom:14px"><div class="tl" style="background:rgba(255,255,255,.15)"></div><div class="tl" style="background:rgba(255,255,255,.15);width:80%"></div></div><div class="nl-row"><input type="email" placeholder="Your email address"><button>Subscribe</button></div></div>
+<div style="display:flex;flex-direction:column;gap:12px;align-items:flex-end"><a href="#" class="cta-btn cta-primary" style="width:100%;justify-content:center;font-size:11px;padding:12px 20px">Make a Donation</a><a href="Volunteer-Individual_Oppurtunities_Confirm.html" class="cta-btn cta-secondary" style="width:100%;justify-content:center;font-size:11px;padding:12px 20px">Volunteer With Us</a></div>
+</div>
+<div class="footer-div"><hr></div>
+<div class="footer-mid"><div class="footer-left"><div class="footer-ein">EIN: 56-0891672 (IRS #)</div><div class="footer-socials"><div class="fsoc"><span>fb</span></div><div class="fsoc"><span>ig</span></div><div class="fsoc"><span>in</span></div><div class="fsoc"><span>yt</span></div></div></div></div>
+<div class="footer-bottom"><p>© 2026 Meals on Wheels — Wake County. All Rights Reserved. | Website by: Cary Digital Design</p></div>
+</footer>
+<script src="main.js"></script>
+</body>
+</html>

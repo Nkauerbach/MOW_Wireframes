@@ -1,0 +1,10 @@
+# Archive files (originals already in HTML)
+*.zip
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Claude local settings
+.claude/settings.local.json
