@@ -3,11 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MOW Wake County — Page Title</title>
+<title>MOW Wake County — Donate Today</title>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <style>
-/* Page-specific styles go here */
+/* Page-specific styles */
+.endowment-card{background:var(--navy);border-radius:12px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;gap:0;margin-bottom:48px}
+.endowment-text{padding:40px 36px;display:flex;flex-direction:column;justify-content:center}
+.endowment-text h3{font-family:var(--font-head);font-weight:900;font-size:20px;color:var(--white);text-transform:uppercase;letter-spacing:2px;margin-bottom:16px}
+.charity-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start;margin-bottom:32px}
+.name-block{display:flex;align-items:center;gap:16px;margin-top:16px}
+.name-block .avatar{width:48px;height:48px;border-radius:50%;background:var(--gray-light);flex-shrink:0}
+.name-block .name-info{display:flex;flex-direction:column;gap:4px}
+.name-bar{height:10px;background:var(--gray-mid);border-radius:3px;opacity:.35}
+@media(max-width:768px){
+  .endowment-card{grid-template-columns:1fr}
+  .charity-grid{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
@@ -17,7 +29,7 @@
 <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><circle cx="12" cy="3.5" r="2.3"/><path d="M4.8 9.8L6.2 12C7.6 11.1 9.7 10.5 12 10.5s4.4.6 5.8 1.5l1.4-2.2C17.5 8.8 14.8 8 12 8s-5.5.8-7.2 1.8z"/><path d="M10.2 12.5L8.5 20h2.2l1.3-4.2L10.2 12.5z"/><path d="M13.8 12.5l1.7 7.5h-2.2l-1.3-4.2 1.8-3.3z"/><rect x="9" y="11.5" width="6" height="2" rx="1"/></svg>
 </div>
 
-<!-- Navbar — set .active on parent tab, .active-child on dropdown item -->
+<!-- Navbar -->
 <nav class="navbar">
 <div class="nav-inner">
 <a href="About_Us-OurMission_Confirm.html" class="nav-logo-box">Meals on Wheels<br>Wake County</a>
@@ -43,9 +55,9 @@
 <a href="Volunteer-Volunteer_Application_Draft.html"><span class="diamond"></span> Apply to Volunteer</a>
 <a href="Volunteer-Volunteer_Resources_Confirm.html"><span class="diamond"></span> Volunteer Resources</a>
 </div></div>
-<div class="nav-item"><a href="Ways_to_Give-Donate_Today_Draft.html">Ways to Give <span class="diamond"></span></a>
+<div class="nav-item active"><a href="Ways_to_Give-Donate_Today_Draft.html">Ways to Give <span class="diamond"></span></a>
 <div class="dropdown">
-<a href="Ways_to_Give-Donate_Today_Draft.html"><span class="diamond"></span> Donate Today</a>
+<a href="Ways_to_Give-Donate_Today_Draft.html" class="active-child"><span class="diamond"></span> Donate Today</a>
 <a href="Ways_to_Give-Workplace_Giving_Draft.html"><span class="diamond"></span> Workplace Giving</a>
 <a href="Ways_to_Give-Estate_Giving_Draft.html"><span class="diamond"></span> Estate Giving</a>
 <a href="Ways_to_Give-Other_Ways_to_Give_Draft.html"><span class="diamond"></span> Other Ways to Give</a>
@@ -53,6 +65,7 @@
 </div></div>
 <div class="nav-item"><a href="News-Direct_Confirm.html">News <span class="diamond"></span></a>
 <div class="dropdown">
+<a href="News-Direct_Confirm.html"><span class="diamond"></span> News</a>
 <a href="News-Government_Impact_Confirm.html"><span class="diamond"></span> Government Impact</a>
 <a href="News-Events_Confirm.html"><span class="diamond"></span> Events</a>
 </div></div>
@@ -63,20 +76,101 @@
 
 <div class="page">
 
-<!-- Hero (remove this block for information-first pages) -->
-<div class="hero-card">
-<div class="hero-x"></div>
-<div class="hero-label"><h1>Page Title</h1></div>
+<!-- Hero -->
+<div class="hero-card"><div class="hero-x"></div><div class="hero-label"><h1>Donate Today</h1></div></div>
+
+<!-- ===== MAKE A GIFT IMAGE ===== -->
+<div class="section">
+<div class="img-placeholder" style="aspect-ratio:2.2/1"><span>Make a Gift</span></div>
 </div>
 
-<!-- Page content goes here -->
+<div class="page-break"></div>
+
+<!-- ===== OUR COMMITMENT ===== -->
 <div class="section">
-<div class="section-title">Section Title</div>
-<div class="section-subtitle">Section subtitle text</div>
+<div class="section-title">Our Commitment</div>
+<div class="text-lines" style="margin-bottom:24px">
+<div class="tl" style="width:100%"></div><div class="tl" style="width:92%"></div><div class="tl" style="width:85%"></div><div class="tl" style="width:78%"></div>
+</div>
+<div class="kpi-box" style="max-width:320px;margin-bottom:24px">
+<div class="kpi-num">$6.52</div>
+<div class="kpi-label">Average Cost Per Meal</div>
+</div>
 <div class="text-lines">
-<div class="tl" style="width:100%"></div>
-<div class="tl" style="width:90%"></div>
-<div class="tl" style="width:75%"></div>
+<div class="tl" style="width:100%"></div><div class="tl" style="width:88%"></div><div class="tl" style="width:70%"></div>
+</div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ===== CHARITY NAVIGATOR ===== -->
+<div class="section">
+<div class="charity-grid">
+<div>
+<div class="section-title" style="font-size:18px">Charity Navigator Rating</div>
+<div class="text-lines" style="margin-bottom:16px">
+<div class="tl" style="width:100%"></div><div class="tl" style="width:90%"></div><div class="tl" style="width:82%"></div><div class="tl" style="width:75%"></div>
+</div>
+<div class="text-lines">
+<div class="tl" style="width:100%"></div><div class="tl" style="width:85%"></div><div class="tl" style="width:60%"></div>
+</div>
+</div>
+<div>
+<div class="text-lines" style="margin-bottom:16px">
+<div class="tl" style="width:100%"></div><div class="tl" style="width:95%"></div><div class="tl" style="width:88%"></div>
+</div>
+<!-- Name / Age / Role block -->
+<div class="name-block">
+<div class="avatar"></div>
+<div class="name-info">
+<div class="name-bar" style="width:120px"></div>
+<div class="name-bar" style="width:80px;height:8px"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ===== ENDOWMENT / FUNDRAISING ONLINE ===== -->
+<div class="section">
+<div class="endowment-card">
+<div class="endowment-text">
+<h3>Endowment</h3>
+<div style="font-family:var(--font-body);font-size:14px;color:rgba(255,255,255,.7);margin-bottom:20px;line-height:1.6">
+<div class="text-lines" style="margin-bottom:16px">
+<div class="tl" style="background:rgba(255,255,255,.15);width:100%"></div>
+<div class="tl" style="background:rgba(255,255,255,.15);width:90%"></div>
+<div class="tl" style="background:rgba(255,255,255,.15);width:75%"></div>
+</div>
+</div>
+<a href="#" class="cta-btn cta-primary">Fundraise Online →</a>
+</div>
+<div class="img-placeholder" style="border-radius:0;min-height:280px"><span>Endowment Image</span></div>
+</div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ===== LEARN ABOUT OUR GIVING CIRCLES ===== -->
+<div class="section">
+<div class="section-title">Learn About Our Giving Circles</div>
+<div class="text-lines" style="margin-bottom:24px">
+<div class="tl" style="width:100%"></div><div class="tl" style="width:88%"></div><div class="tl" style="width:72%"></div>
+</div>
+<div style="display:flex;gap:16px;flex-wrap:wrap">
+<a href="Ways_to_Give-Giving_Circles_Draft.html" class="cta-btn cta-primary">Explore Giving Circles →</a>
+</div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ===== BOTTOM CTAs ===== -->
+<div class="section" style="margin-bottom:0">
+<div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center">
+<a href="Ways_to_Give-Other_Ways_to_Give_Draft.html" class="cta-btn cta-secondary">Explore Other Ways to Give →</a>
+<a href="About_Us-AnnualReports_Confirm.html" class="cta-btn cta-primary">Read Our Annual Report →</a>
 </div>
 </div>
 

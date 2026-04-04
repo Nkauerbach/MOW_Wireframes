@@ -3,11 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MOW Wake County — Page Title</title>
+<title>MOW Wake County — Other Ways to Give</title>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <style>
-/* Page-specific styles go here */
+/* Page-specific styles */
+.stock-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:32px}
+.stock-card{background:var(--white);border-radius:12px;padding:28px 24px;box-shadow:0 2px 16px rgba(0,0,0,.06)}
+.stock-card h4{font-family:var(--font-head);font-weight:900;font-size:15px;color:var(--navy);text-transform:uppercase;letter-spacing:2px;margin-bottom:12px}
+.mutual-box{background:var(--navy);border-radius:12px;padding:28px 24px;margin-bottom:32px}
+.mutual-box h4{font-family:var(--font-head);font-weight:900;font-size:15px;color:var(--white);text-transform:uppercase;letter-spacing:2px;margin-bottom:12px}
+@media(max-width:768px){
+  .stock-grid{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
@@ -17,7 +25,7 @@
 <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><circle cx="12" cy="3.5" r="2.3"/><path d="M4.8 9.8L6.2 12C7.6 11.1 9.7 10.5 12 10.5s4.4.6 5.8 1.5l1.4-2.2C17.5 8.8 14.8 8 12 8s-5.5.8-7.2 1.8z"/><path d="M10.2 12.5L8.5 20h2.2l1.3-4.2L10.2 12.5z"/><path d="M13.8 12.5l1.7 7.5h-2.2l-1.3-4.2 1.8-3.3z"/><rect x="9" y="11.5" width="6" height="2" rx="1"/></svg>
 </div>
 
-<!-- Navbar — set .active on parent tab, .active-child on dropdown item -->
+<!-- Navbar -->
 <nav class="navbar">
 <div class="nav-inner">
 <a href="About_Us-OurMission_Confirm.html" class="nav-logo-box">Meals on Wheels<br>Wake County</a>
@@ -43,16 +51,17 @@
 <a href="Volunteer-Volunteer_Application_Draft.html"><span class="diamond"></span> Apply to Volunteer</a>
 <a href="Volunteer-Volunteer_Resources_Confirm.html"><span class="diamond"></span> Volunteer Resources</a>
 </div></div>
-<div class="nav-item"><a href="Ways_to_Give-Donate_Today_Draft.html">Ways to Give <span class="diamond"></span></a>
+<div class="nav-item active"><a href="Ways_to_Give-Donate_Today_Draft.html">Ways to Give <span class="diamond"></span></a>
 <div class="dropdown">
 <a href="Ways_to_Give-Donate_Today_Draft.html"><span class="diamond"></span> Donate Today</a>
 <a href="Ways_to_Give-Workplace_Giving_Draft.html"><span class="diamond"></span> Workplace Giving</a>
 <a href="Ways_to_Give-Estate_Giving_Draft.html"><span class="diamond"></span> Estate Giving</a>
-<a href="Ways_to_Give-Other_Ways_to_Give_Draft.html"><span class="diamond"></span> Other Ways to Give</a>
+<a href="Ways_to_Give-Other_Ways_to_Give_Draft.html" class="active-child"><span class="diamond"></span> Other Ways to Give</a>
 <a href="Ways_to_Give-Giving_Circles_Draft.html"><span class="diamond"></span> Giving Circles</a>
 </div></div>
 <div class="nav-item"><a href="News-Direct_Confirm.html">News <span class="diamond"></span></a>
 <div class="dropdown">
+<a href="News-Direct_Confirm.html"><span class="diamond"></span> News</a>
 <a href="News-Government_Impact_Confirm.html"><span class="diamond"></span> Government Impact</a>
 <a href="News-Events_Confirm.html"><span class="diamond"></span> Events</a>
 </div></div>
@@ -61,22 +70,103 @@
 </div>
 </nav>
 
-<div class="page">
-
-<!-- Hero (remove this block for information-first pages) -->
-<div class="hero-card">
-<div class="hero-x"></div>
-<div class="hero-label"><h1>Page Title</h1></div>
+<!-- Anchor Bar -->
+<div class="anchor-bar">
+<a href="#stock-giving" class="active">Stock &amp; Mutual Funds</a>
+<a href="#fundraising">Fundraising</a>
+<a href="#daf">Donor Advised Funds</a>
 </div>
 
-<!-- Page content goes here -->
-<div class="section">
-<div class="section-title">Section Title</div>
-<div class="section-subtitle">Section subtitle text</div>
+<div class="page">
+
+<!-- Hero -->
+<div class="hero-card"><div class="hero-x"></div><div class="hero-label"><h1>Other Ways to Give</h1></div></div>
+
+<!-- ===== STOCK GIVING ===== -->
+<div class="section" id="stock-giving">
+<div class="section-title">Stock Giving</div>
+<div class="text-lines" style="margin-bottom:24px">
+<div class="tl" style="width:100%"></div><div class="tl" style="width:90%"></div><div class="tl" style="width:78%"></div>
+</div>
+<div class="stock-grid">
+<div class="stock-card">
+<h4>Sales Proceeds</h4>
 <div class="text-lines">
-<div class="tl" style="width:100%"></div>
-<div class="tl" style="width:90%"></div>
-<div class="tl" style="width:75%"></div>
+<div class="tl" style="width:100%"></div><div class="tl" style="width:88%"></div><div class="tl" style="width:72%"></div><div class="tl" style="width:60%"></div>
+</div>
+</div>
+<div class="stock-card">
+<h4>Gain Stock</h4>
+<div class="text-lines">
+<div class="tl" style="width:100%"></div><div class="tl" style="width:85%"></div><div class="tl" style="width:68%"></div><div class="tl" style="width:55%"></div>
+</div>
+</div>
+</div>
+
+<!-- Mutual Fund Gifts -->
+<div class="mutual-box">
+<h4>Mutual Fund Gifts</h4>
+<div class="text-lines">
+<div class="tl" style="background:rgba(255,255,255,.15);width:100%"></div>
+<div class="tl" style="background:rgba(255,255,255,.15);width:90%"></div>
+<div class="tl" style="background:rgba(255,255,255,.15);width:75%"></div>
+</div>
+</div>
+
+<div class="text-lines" style="margin-bottom:24px">
+<div class="tl" style="width:100%"></div><div class="tl" style="width:88%"></div><div class="tl" style="width:65%"></div>
+</div>
+</div>
+
+<hr class="dashed-break">
+
+<!-- ===== QUICK DESCRIPTION AND NEXT WAY ===== -->
+<div class="section">
+<div class="section-title" style="font-size:16px">Quick Description and Next Steps</div>
+<div class="text-lines" style="margin-bottom:20px">
+<div class="tl" style="width:100%"></div><div class="tl" style="width:92%"></div><div class="tl" style="width:80%"></div>
+</div>
+<div style="display:flex;gap:12px;flex-wrap:wrap">
+<div style="width:60px;height:8px;background:var(--cyan);border-radius:4px"></div>
+<div style="width:80px;height:8px;background:var(--lime);border-radius:4px"></div>
+<div style="width:50px;height:8px;background:var(--coral);border-radius:4px"></div>
+</div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ===== FUNDRAISING ===== -->
+<div class="section" id="fundraising">
+<div class="section-title">Create Your Own Fundraiser</div>
+<div class="text-lines" style="margin-bottom:24px">
+<div class="tl" style="width:100%"></div><div class="tl" style="width:92%"></div><div class="tl" style="width:85%"></div><div class="tl" style="width:75%"></div>
+</div>
+<div class="text-lines" style="margin-bottom:24px">
+<div class="tl" style="width:100%"></div><div class="tl" style="width:88%"></div><div class="tl" style="width:70%"></div>
+</div>
+<a href="#" class="cta-btn cta-primary">Get Started Through Fundraise →</a>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ===== DONOR ADVISED FUNDS ===== -->
+<div class="section" id="daf">
+<div class="section-title">DAF (Donor Advised Fund)</div>
+<div class="text-lines" style="margin-bottom:24px">
+<div class="tl" style="width:100%"></div><div class="tl" style="width:95%"></div><div class="tl" style="width:88%"></div><div class="tl" style="width:80%"></div><div class="tl" style="width:72%"></div>
+</div>
+<div class="text-lines">
+<div class="tl" style="width:100%"></div><div class="tl" style="width:85%"></div><div class="tl" style="width:60%"></div>
+</div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ===== OUR GIVING CIRCLES CTA ===== -->
+<div class="section" style="margin-bottom:0">
+<div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center">
+<a href="Ways_to_Give-Giving_Circles_Draft.html" class="cta-btn cta-primary">Our Giving Circles →</a>
+<a href="Ways_to_Give-Donate_Today_Draft.html" class="cta-btn cta-secondary">Donate Now →</a>
 </div>
 </div>
 
