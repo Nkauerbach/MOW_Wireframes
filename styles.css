@@ -29,10 +29,12 @@ body{font-family:var(--font-body);color:var(--text);background:#f9f9f9;overflow-
 
 /* ── Navbar ──────────────────────────────────────────────────── */
 .navbar{background:var(--white);border-bottom:2px solid var(--gray-light);position:sticky;top:0;z-index:900;padding:0 40px}
-.nav-inner{max-width:var(--max-w);margin:0 auto;display:flex;align-items:center;height:72px;justify-content:space-between}
-.nav-logo-box{width:180px;height:44px;background:var(--navy);border-radius:6px;display:flex;align-items:center;justify-content:center;color:var(--white);font-family:var(--font-head);font-weight:800;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;padding:0 12px;text-align:center;line-height:1.2;text-decoration:none}
+.nav-inner{max-width:var(--max-w);margin:0 auto;display:flex;align-items:center;height:90px;justify-content:space-between}
+.nav-logo-box{display:flex;flex-direction:column;align-items:center;gap:4px;text-decoration:none}
+.nav-logo-badge{width:180px;height:44px;background:var(--navy);border-radius:6px;display:flex;align-items:center;justify-content:center;color:var(--white);font-family:var(--font-head);font-weight:800;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;padding:0 12px;text-align:center;line-height:1.2}
+.nav-phone{font-family:var(--font-body);font-size:11px;color:var(--navy);font-weight:600;letter-spacing:.5px}
 .nav-logo-box a{color:inherit;text-decoration:none}
-.nav-center{display:flex;gap:0;height:72px;flex:1;justify-content:center}
+.nav-center{display:flex;gap:0;height:90px;flex:1;justify-content:center}
 .nav-item{position:relative;height:100%;display:flex;align-items:center}
 .nav-item>a{font-family:var(--font-head);font-weight:700;font-size:12.5px;text-transform:uppercase;letter-spacing:1.6px;color:var(--navy);text-decoration:none;padding:0 16px;height:100%;display:flex;align-items:center;gap:6px;transition:color .2s;white-space:nowrap}
 .nav-item>a:hover{color:var(--cyan)}
@@ -149,21 +151,21 @@ body{font-family:var(--font-body);color:var(--text);background:#f9f9f9;overflow-
 .footer-bottom p{max-width:var(--max-w);margin:0 auto;padding:0 var(--content-pad);font-size:11px;color:rgba(255,255,255,.35);text-align:center;letter-spacing:.5px}
 
 /* ── Anchor Bar (sub-nav below navbar) ───────────────────────── */
-.anchor-bar{position:sticky;top:72px;z-index:800;background:var(--white);border-bottom:1px solid var(--gray-light);display:flex;justify-content:center;gap:0;padding:0}
+.anchor-bar{position:sticky;top:90px;z-index:800;background:var(--white);border-bottom:1px solid var(--gray-light);display:flex;justify-content:center;gap:0;padding:0}
 .anchor-bar a{font-family:var(--font-head);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:1.6px;color:var(--gray-mid);text-decoration:none;padding:14px 24px;position:relative;transition:color .2s}
 .anchor-bar a:hover{color:var(--navy)}
 .anchor-bar a.active{color:var(--navy)}
 .anchor-bar a.active::after{content:'';position:absolute;bottom:0;left:24px;right:24px;height:2px;background:var(--cyan);border-radius:1px}
 
 /* Scroll offset for anchored sections (accounts for navbar + anchor bar) */
-[id]{scroll-margin-top:130px}
+[id]{scroll-margin-top:148px}
 
 /* ── Responsive (≤768px) ─────────────────────────────────────── */
 @media(max-width:768px){
   :root{--content-pad:20px}
   .navbar{padding:0 16px}
   .hamburger{display:flex}
-  .nav-center{display:none;position:absolute;top:72px;left:0;right:0;background:var(--white);flex-direction:column;height:auto;padding:12px 0;box-shadow:0 8px 24px rgba(0,0,0,.1);border-bottom:2px solid var(--gray-light)}
+  .nav-center{display:none;position:absolute;top:90px;left:0;right:0;background:var(--white);flex-direction:column;height:auto;padding:12px 0;box-shadow:0 8px 24px rgba(0,0,0,.1);border-bottom:2px solid var(--gray-light)}
   .nav-center.open{display:flex}
   .nav-item{height:auto}
   .nav-item>a{height:auto;padding:14px 24px}
@@ -178,7 +180,7 @@ body{font-family:var(--font-body);color:var(--text);background:#f9f9f9;overflow-
   .split-bg .img-placeholder{min-height:200px}
   .anchor-bar{overflow-x:auto;justify-content:flex-start;padding:0 16px}
   .anchor-bar a{font-size:10px;padding:12px 16px;white-space:nowrap}
-  [id]{scroll-margin-top:100px}
+  [id]{scroll-margin-top:118px}
   .a11y-widget{left:12px;width:38px;height:38px}
   .a11y-widget svg{width:22px;height:22px}
 }

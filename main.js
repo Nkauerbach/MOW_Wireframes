@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const target = document.querySelector(id);
       if (!target) return;
       e.preventDefault();
-      const navbarH = 72;
+      const navbarH = 90;
       const y = target.getBoundingClientRect().top + window.scrollY - navbarH - 12;
       window.scrollTo({ top: y, behavior: 'smooth' });
     });
@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
           }
         });
-      }, { rootMargin: '-140px 0px -55% 0px', threshold: 0 });
+      }, { rootMargin: '-158px 0px -55% 0px', threshold: 0 });
 
       sections.forEach(s => observer.observe(s.el));
     }
