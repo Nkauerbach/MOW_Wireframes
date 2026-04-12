@@ -29,7 +29,7 @@ body{font-family:var(--font-body);color:var(--text);background:#f9f9f9;overflow-
 
 /* ── Navbar ──────────────────────────────────────────────────── */
 .navbar{background:var(--white);border-bottom:2px solid var(--gray-light);position:sticky;top:0;z-index:900;padding:0 40px}
-.nav-inner{max-width:var(--max-w);margin:0 auto;display:flex;align-items:center;height:90px;justify-content:space-between}
+.nav-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;height:90px;justify-content:space-between}
 .nav-logo-box{display:flex;flex-direction:column;align-items:center;gap:4px;text-decoration:none}
 .nav-logo-badge{width:180px;height:44px;background:var(--navy);border-radius:6px;display:flex;align-items:center;justify-content:center;color:var(--white);font-family:var(--font-head);font-weight:800;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;padding:0 12px;text-align:center;line-height:1.2}
 .nav-phone{font-family:var(--font-body);font-size:11px;color:var(--navy);font-weight:600;letter-spacing:.5px}
@@ -159,6 +159,15 @@ body{font-family:var(--font-body);color:var(--text);background:#f9f9f9;overflow-
 
 /* Scroll offset for anchored sections (accounts for navbar + anchor bar) */
 [id]{scroll-margin-top:148px}
+
+/* ── Scroll Reveal Animations ──────────────────────────────── */
+[data-reveal]{opacity:0;transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
+[data-reveal="fade-up"]{transform:translateY(32px)}
+[data-reveal="fade-left"]{transform:translateX(-40px)}
+[data-reveal="fade-right"]{transform:translateX(40px)}
+[data-reveal="zoom-in"]{transform:scale(.92)}
+[data-reveal].revealed{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){[data-reveal]{opacity:1;transform:none;transition:none}}
 
 /* ── Responsive (≤768px) ─────────────────────────────────────── */
 @media(max-width:768px){

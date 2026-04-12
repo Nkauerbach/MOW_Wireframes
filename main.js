@@ -148,4 +148,23 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  /* ── 6. Scroll Reveal Animations ───────────────────────────── */
+  const revealEls = document.querySelectorAll('[data-reveal]');
+  if (revealEls.length) {
+    const revealObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const delay = parseInt(entry.target.dataset.revealDelay || '0', 10);
+          if (delay) {
+            setTimeout(() => entry.target.classList.add('revealed'), delay);
+          } else {
+            entry.target.classList.add('revealed');
+          }
+          revealObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+    revealEls.forEach(el => revealObs.observe(el));
+  }
+
 });
