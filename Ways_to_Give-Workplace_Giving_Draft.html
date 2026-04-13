@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MOW Wake County — Workplace Giving</title>
+<title>MOW Wake County — Ways to Give</title>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <style>
 /* Page-specific styles */
-.sticky-card{position:sticky;top:158px;background:var(--white);border-radius:12px;padding:28px 24px;box-shadow:0 2px 16px rgba(0,0,0,.06)}
+.sticky-card{position:sticky;top:148px;background:var(--white);border-radius:12px;padding:28px 24px;box-shadow:0 2px 16px rgba(0,0,0,.06)}
 .sticky-card h4{font-family:var(--font-head);font-weight:900;font-size:15px;color:var(--navy);text-transform:uppercase;letter-spacing:2px;margin-bottom:16px}
 .sticky-detail{display:flex;align-items:center;gap:10px;margin-bottom:12px;font-family:var(--font-body);font-size:14px;color:var(--text)}
 .sticky-detail .label{font-weight:600;color:var(--navy);min-width:100px}
@@ -18,8 +18,15 @@
 .search-box input:focus{outline:none;border-color:var(--cyan)}
 .search-box .search-btn{padding:12px 24px;border:none;border-radius:8px;background:var(--navy);color:var(--white);font-family:var(--font-head);font-weight:800;font-size:12px;text-transform:uppercase;letter-spacing:1.5px;cursor:pointer}
 .search-box .clear-btn{padding:12px 16px;border:2px solid var(--gray-mid);border-radius:8px;background:transparent;color:var(--gray-mid);font-family:var(--font-head);font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:1px;cursor:pointer}
+.planned-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:32px}
+.stock-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:32px}
+.stock-card{background:var(--white);border-radius:12px;padding:28px 24px;box-shadow:0 2px 16px rgba(0,0,0,.06)}
+.stock-card h4{font-family:var(--font-head);font-weight:900;font-size:15px;color:var(--navy);text-transform:uppercase;letter-spacing:2px;margin-bottom:12px}
+.mutual-box{background:var(--navy);border-radius:12px;padding:28px 24px;margin-bottom:32px}
+.mutual-box h4{font-family:var(--font-head);font-weight:900;font-size:15px;color:var(--white);text-transform:uppercase;letter-spacing:2px;margin-bottom:12px}
 @media(max-width:768px){
   .sticky-card{position:static;margin-bottom:24px}
+  .planned-grid,.stock-grid{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -44,24 +51,19 @@
 </div></div>
 <div class="nav-item"><a href="Get_Meals-Meal_Delivery_Confirm.html">Client Services <span class="diamond"></span></a>
 <div class="dropdown">
-<a href="Get_Meals-Meal_Delivery_Confirm.html"><span class="diamond"></span> Meal Delivery — Browse Menu</a>
-<a href="Get_Meals-Friendship_Cafe_Confirm.html"><span class="diamond"></span> Friendship Cafe</a>
+<a href="Get_Meals-Meal_Delivery_Confirm.html"><span class="diamond"></span> Browse Menus</a>
 <a href="Get_Meals-Application_Services_Confirm.html"><span class="diamond"></span> Apply to Services</a>
 <a href="Get_Meals-Client_Resources_Confirm.html"><span class="diamond"></span> Client Resources</a>
 </div></div>
-<div class="nav-item"><a href="Volunteer-Individual_Oppurtunities_Confirm.html">Volunteer With Us <span class="diamond"></span></a>
+<div class="nav-item"><a href="Volunteer-Volunteer_Application_Draft.html">Volunteer With Us <span class="diamond"></span></a>
 <div class="dropdown">
-<a href="Volunteer-Individual_Oppurtunities_Confirm.html"><span class="diamond"></span> Individual Opportunities</a>
-<a href="Volunteer-Group_Oppurtunities_Confirm.html"><span class="diamond"></span> Group Opportunities</a>
 <a href="Volunteer-Volunteer_Application_Draft.html"><span class="diamond"></span> Apply to Volunteer</a>
 <a href="Volunteer-Volunteer_Resources_Confirm.html"><span class="diamond"></span> Volunteer Resources</a>
 </div></div>
 <div class="nav-item active"><a href="Ways_to_Give-Donate_Today_Draft.html">Donate <span class="diamond"></span></a>
 <div class="dropdown">
 <a href="Ways_to_Give-Donate_Today_Draft.html"><span class="diamond"></span> Donate Today</a>
-<a href="Ways_to_Give-Workplace_Giving_Draft.html" class="active-child"><span class="diamond"></span> Workplace Giving</a>
-<a href="Ways_to_Give-Estate_Giving_Draft.html"><span class="diamond"></span> Estate Giving</a>
-<a href="Ways_to_Give-Other_Ways_to_Give_Draft.html"><span class="diamond"></span> Other Ways to Give</a>
+<a href="Ways_to_Give-Workplace_Giving_Draft.html" class="active-child"><span class="diamond"></span> Ways to Give</a>
 <a href="Ways_to_Give-Giving_Circles_Draft.html"><span class="diamond"></span> Giving Circles</a>
 </div></div>
 <div class="nav-item"><a href="News-Direct_Confirm.html">News &amp; Events <span class="diamond"></span></a>
@@ -70,29 +72,38 @@
 <a href="News-Events_Confirm.html"><span class="diamond"></span> Current Events</a>
 </div></div>
 </div>
-<div class="nav-ctas"><a href="Ways_to_Give-Donate_Today_Draft.html" class="btn btn-donate">Donate</a><a href="Volunteer-Individual_Oppurtunities_Confirm.html" class="btn btn-volunteer">Volunteer</a></div>
+<div class="nav-ctas"><a href="Ways_to_Give-Donate_Today_Draft.html" class="btn btn-donate">Donate</a><a href="Volunteer-Volunteer_Application_Draft.html" class="btn btn-volunteer">Volunteer</a></div>
 </div>
 </nav>
+
+<!-- Anchor Bar -->
+<div class="anchor-bar">
+<a href="#workplace-giving" class="active">Workplace Giving</a>
+<a href="#estate-giving">Estate Giving</a>
+<a href="#other-ways">Other Ways to Give</a>
+</div>
 
 <div class="page">
 
 <!-- Hero -->
-<div class="hero-card"><div class="hero-x"></div><div class="hero-label"><h1>Workplace Giving</h1></div></div>
+<div class="hero-card"><div class="hero-x"></div><div class="hero-label"><h1>Ways to Give</h1></div></div>
 
-<!-- ===== COMPANY MATCHING + STICKY CARD ===== -->
-<div class="section">
+<!-- ══════════════════════════════════════════════ -->
+<!-- ===== WORKPLACE GIVING ===== -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="section" id="workplace-giving">
 <div style="display:grid;grid-template-columns:1fr 340px;gap:32px;align-items:start">
 <div>
-<div class="section-title">Discover If Your Company Matches Gifts to Meals on Wheels</div>
-<div class="text-lines" style="margin-bottom:24px">
+<div class="section-title" data-reveal="fade-up">Discover If Your Company Matches Gifts to Meals on Wheels</div>
+<div class="text-lines" style="margin-bottom:24px" data-reveal="fade-up">
 <div class="tl" style="width:100%"></div><div class="tl" style="width:92%"></div><div class="tl" style="width:88%"></div><div class="tl" style="width:75%"></div>
 </div>
-<div class="text-lines" style="margin-bottom:32px">
+<div class="text-lines" style="margin-bottom:32px" data-reveal="fade-up">
 <div class="tl" style="width:100%"></div><div class="tl" style="width:85%"></div><div class="tl" style="width:65%"></div>
 </div>
 
 <!-- Search Company -->
-<div style="margin-bottom:32px">
+<div style="margin-bottom:32px" data-reveal="fade-up">
 <div class="section-title" style="font-size:16px;margin-bottom:16px">Search Your Company</div>
 <div class="text-lines" style="margin-bottom:16px">
 <div class="tl" style="width:100%"></div><div class="tl" style="width:80%"></div>
@@ -106,8 +117,8 @@
 
 <div class="page-break"></div>
 
-<!-- Reach Out to Development Staff -->
-<div class="info-box">
+<!-- Reach Out -->
+<div class="info-box" data-reveal="fade-up">
 <h4>Reach Out to Development Staff</h4>
 <div class="text-lines" style="margin-bottom:16px">
 <div class="tl" style="width:100%"></div><div class="tl" style="width:85%"></div><div class="tl" style="width:70%"></div>
@@ -116,29 +127,10 @@
 <div style="font-family:var(--font-body);font-size:14px;color:var(--navy);font-weight:600">giving@wakemow.org</div>
 </div>
 
-<div class="page-break"></div>
-
-<!-- Interested in Stock Giving? -->
-<div style="margin-bottom:32px">
-<div class="kanban-card" style="min-height:200px">
-<div class="img-placeholder" style="border-radius:0"><span>Stock Giving</span></div>
-<div class="kanban-overlay"></div>
-<div class="kanban-content">
-<div style="font-family:var(--font-head);font-weight:900;font-size:18px;color:var(--white);text-transform:uppercase;letter-spacing:2px;margin-bottom:8px">Interested in Stock Giving?</div>
-<a href="Ways_to_Give-Other_Ways_to_Give_Draft.html" class="kanban-cta">Learn More →</a>
-</div>
-</div>
-</div>
-
-<!-- Secure Annual Report CTA -->
-<div style="text-align:center">
-<a href="About_Us-AnnualReports_Confirm.html" class="cta-btn cta-primary">Secure Annual Report →</a>
-</div>
-
 </div>
 
 <!-- Sticky Card -->
-<div class="sticky-card">
+<div class="sticky-card" data-reveal="fade-left">
 <h4>Our Information</h4>
 <div class="sticky-detail">
 <span class="label">Our EIN:</span>
@@ -157,6 +149,147 @@
 </div>
 </div>
 
+<hr class="dashed-break">
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- ===== ESTATE GIVING ===== -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="section" id="estate-giving">
+<div class="section-title" data-reveal="fade-up">Estate Giving</div>
+
+<!-- Giving Through a Will or Trust -->
+<div style="margin-bottom:32px" data-reveal="fade-up">
+<div class="section-title" style="font-size:18px;margin-bottom:16px">Giving Through a Will or Trust</div>
+<div class="text-lines" style="margin-bottom:20px">
+<div class="tl" style="width:100%"></div><div class="tl" style="width:95%"></div><div class="tl" style="width:88%"></div><div class="tl" style="width:80%"></div><div class="tl" style="width:72%"></div>
+</div>
+<div class="text-lines">
+<div class="tl" style="width:100%"></div><div class="tl" style="width:90%"></div><div class="tl" style="width:65%"></div>
+</div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- Traditional Ways for Planned Giving -->
+<div style="margin-bottom:32px" data-reveal="fade-up">
+<div class="section-title" style="font-size:18px;margin-bottom:16px">Traditional Ways for Planned Giving</div>
+<div class="text-lines" style="margin-bottom:24px">
+<div class="tl" style="width:100%"></div><div class="tl" style="width:85%"></div><div class="tl" style="width:70%"></div>
+</div>
+<div class="planned-grid">
+<div class="img-placeholder" style="aspect-ratio:1.6/1" data-reveal="fade-right"><span>Planned Giving Option 1</span></div>
+<div class="img-placeholder" style="aspect-ratio:1.6/1" data-reveal="fade-left"><span>Planned Giving Option 2</span></div>
+</div>
+</div>
+
+<!-- Next Steps -->
+<div style="margin-bottom:32px" data-reveal="fade-up">
+<div class="section-title" style="font-size:18px;margin-bottom:16px">Next Steps</div>
+<div class="text-lines" style="margin-bottom:20px">
+<div class="tl" style="width:100%"></div><div class="tl" style="width:92%"></div><div class="tl" style="width:85%"></div><div class="tl" style="width:78%"></div>
+</div>
+<div class="text-lines">
+<div class="tl" style="width:100%"></div><div class="tl" style="width:88%"></div><div class="tl" style="width:60%"></div>
+</div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- Attorney Info -->
+<div class="info-box" data-reveal="fade-up">
+<h4>Reach Out to an Attorney</h4>
+<div class="text-lines" style="margin-bottom:16px">
+<div class="tl" style="width:100%"></div><div class="tl" style="width:90%"></div><div class="tl" style="width:82%"></div><div class="tl" style="width:75%"></div>
+</div>
+<div class="text-lines">
+<div class="tl" style="width:100%"></div><div class="tl" style="width:85%"></div><div class="tl" style="width:60%"></div>
+</div>
+</div>
+</div>
+
+<hr class="dashed-break">
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- ===== OTHER WAYS TO GIVE ===== -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="section" id="other-ways">
+<div class="section-title" data-reveal="fade-up">Other Ways to Give</div>
+
+<!-- Stock Giving -->
+<div style="margin-bottom:32px">
+<div class="section-title" style="font-size:18px;margin-bottom:16px" data-reveal="fade-up">Stock Giving</div>
+<div class="text-lines" style="margin-bottom:24px" data-reveal="fade-up">
+<div class="tl" style="width:100%"></div><div class="tl" style="width:90%"></div><div class="tl" style="width:78%"></div>
+</div>
+<div class="stock-grid">
+<div class="stock-card" data-reveal="fade-right">
+<h4>Sales Proceeds</h4>
+<div class="text-lines">
+<div class="tl" style="width:100%"></div><div class="tl" style="width:88%"></div><div class="tl" style="width:72%"></div><div class="tl" style="width:60%"></div>
+</div>
+</div>
+<div class="stock-card" data-reveal="fade-left">
+<h4>Gain Stock</h4>
+<div class="text-lines">
+<div class="tl" style="width:100%"></div><div class="tl" style="width:85%"></div><div class="tl" style="width:68%"></div><div class="tl" style="width:55%"></div>
+</div>
+</div>
+</div>
+
+<!-- Mutual Fund Gifts -->
+<div class="mutual-box" data-reveal="fade-up">
+<h4>Mutual Fund Gifts</h4>
+<div class="text-lines">
+<div class="tl" style="background:rgba(255,255,255,.15);width:100%"></div>
+<div class="tl" style="background:rgba(255,255,255,.15);width:90%"></div>
+<div class="tl" style="background:rgba(255,255,255,.15);width:75%"></div>
+</div>
+</div>
+
+<div class="text-lines" style="margin-bottom:24px" data-reveal="fade-up">
+<div class="tl" style="width:100%"></div><div class="tl" style="width:88%"></div><div class="tl" style="width:65%"></div>
+</div>
+</div>
+
+<hr class="dashed-break">
+
+<!-- Fundraising -->
+<div style="margin-bottom:32px" data-reveal="fade-up">
+<div class="section-title" style="font-size:18px;margin-bottom:16px">Create Your Own Fundraiser</div>
+<div class="text-lines" style="margin-bottom:24px">
+<div class="tl" style="width:100%"></div><div class="tl" style="width:92%"></div><div class="tl" style="width:85%"></div><div class="tl" style="width:75%"></div>
+</div>
+<div class="text-lines" style="margin-bottom:24px">
+<div class="tl" style="width:100%"></div><div class="tl" style="width:88%"></div><div class="tl" style="width:70%"></div>
+</div>
+<a href="#" class="cta-btn cta-primary">Get Started Through Fundraise →</a>
+</div>
+
+<div class="page-break"></div>
+
+<!-- DAF -->
+<div style="margin-bottom:32px" data-reveal="fade-up">
+<div class="section-title" style="font-size:18px;margin-bottom:16px">DAF (Donor Advised Fund)</div>
+<div class="text-lines" style="margin-bottom:24px">
+<div class="tl" style="width:100%"></div><div class="tl" style="width:95%"></div><div class="tl" style="width:88%"></div><div class="tl" style="width:80%"></div><div class="tl" style="width:72%"></div>
+</div>
+<div class="text-lines">
+<div class="tl" style="width:100%"></div><div class="tl" style="width:85%"></div><div class="tl" style="width:60%"></div>
+</div>
+</div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- Bottom CTAs -->
+<div class="section" style="margin-bottom:0">
+<div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center" data-reveal="fade-up">
+<a href="Ways_to_Give-Giving_Circles_Draft.html" class="cta-btn cta-primary">Our Giving Circles →</a>
+<a href="Ways_to_Give-Donate_Today_Draft.html" class="cta-btn cta-secondary">Donate Now →</a>
+<a href="About_Us-AnnualReports_Confirm.html" class="cta-btn cta-secondary">Secure Annual Report →</a>
+</div>
+</div>
+
 </div>
 
 <!-- Footer -->
@@ -165,7 +298,7 @@
 <div class="footer-logos"><div class="footer-logo-box flw">Meals on Wheels<br>Wake County</div><div class="footer-logo-box fln">MOW<br>National</div></div>
 <div class="footer-contact"><p><span class="fc-icon">✉</span> Mailing Address:<br>1001 Blair Drive<br>Raleigh, NC 27603</p><p style="margin-top:10px"><span class="fc-icon">☏</span> (919) 735-1660</p></div>
 <div class="footer-nl"><h4>Our Newsletter</h4><div class="text-lines" style="margin-bottom:14px"><div class="tl" style="background:rgba(255,255,255,.15)"></div><div class="tl" style="background:rgba(255,255,255,.15);width:80%"></div></div><div class="nl-row"><input type="email" placeholder="Your email address"><button>Subscribe</button></div></div>
-<div style="display:flex;flex-direction:column;gap:12px;align-items:flex-end"><a href="Ways_to_Give-Donate_Today_Draft.html" class="cta-btn cta-primary" style="width:100%;justify-content:center;font-size:11px;padding:12px 20px">Make a Donation</a><a href="Volunteer-Individual_Oppurtunities_Confirm.html" class="cta-btn cta-secondary" style="width:100%;justify-content:center;font-size:11px;padding:12px 20px">Volunteer With Us</a></div>
+<div style="display:flex;flex-direction:column;gap:12px;align-items:flex-end"><a href="Ways_to_Give-Donate_Today_Draft.html" class="cta-btn cta-primary" style="width:100%;justify-content:center;font-size:11px;padding:12px 20px">Make a Donation</a><a href="Volunteer-Volunteer_Application_Draft.html" class="cta-btn cta-secondary" style="width:100%;justify-content:center;font-size:11px;padding:12px 20px">Volunteer With Us</a></div>
 </div>
 <div class="footer-div"><hr></div>
 <div class="footer-mid"><div class="footer-left"><div class="footer-ein">EIN: 56-0891672 (IRS #)</div><div class="footer-socials"><div class="fsoc"><span>fb</span></div><div class="fsoc"><span>ig</span></div><div class="fsoc"><span>in</span></div><div class="fsoc"><span>yt</span></div></div></div></div>
