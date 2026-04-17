@@ -3,27 +3,64 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MOW Wake County — Application to Services</title>
+<title>MOW Wake County — Apply to Services</title>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <style>
-/* Page-specific styles */
+/* ── Page-specific ── */
 .creative-icon{width:36px;height:36px;border-radius:50%;background:var(--cyan);display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .creative-icon svg{width:18px;height:18px;fill:var(--white)}
-.form-placeholder{border:2px solid var(--gray-mid);border-radius:12px;padding:48px 40px;min-height:600px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--white);position:relative;opacity:.7}
+.form-placeholder{border:2px solid var(--gray-mid);border-radius:12px;padding:48px 40px;min-height:560px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--white);opacity:.7}
 .form-placeholder-label{font-family:var(--font-head);font-weight:900;font-size:18px;color:var(--gray-mid);text-transform:uppercase;letter-spacing:3px;text-align:center}
 .form-placeholder-sub{font-family:var(--font-body);font-size:13px;color:var(--gray-mid);margin-top:8px;text-align:center}
 .video-card{background:var(--navy);border-radius:12px;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:transform .2s}
 .video-card:hover{transform:translateY(-3px)}
-.video-play{width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,.15);border:2px solid rgba(255,255,255,.5);display:flex;align-items:center;justify-content:center;position:relative;z-index:2}
-.video-play::after{content:'';width:0;height:0;border-left:18px solid var(--white);border-top:11px solid transparent;border-bottom:11px solid transparent;margin-left:4px}
-.video-label{position:absolute;bottom:16px;left:20px;z-index:2;font-family:var(--font-head);font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:2px;color:rgba(255,255,255,.6)}
-.cafe-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:32px;align-items:start}
-.sticky-stack{position:sticky;top:148px;display:flex;flex-direction:column;gap:16px}
-.location-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:32px}
-.location-card{background:rgba(0,57,82,.06);border-radius:10px;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .2s;border:2px solid transparent;position:relative;overflow:hidden}
-.location-card:hover{border-color:var(--cyan);background:rgba(0,183,196,.08);transform:translateY(-3px)}
-.location-card span{font-family:var(--font-head);font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:var(--navy);font-weight:700;text-align:center;padding:8px}
+.video-play{border-radius:50%;background:rgba(255,255,255,.15);border:2px solid rgba(255,255,255,.5);display:flex;align-items:center;justify-content:center;position:relative;z-index:2}
+.video-play::after{content:'';width:0;height:0;border-left:16px solid var(--white);border-top:10px solid transparent;border-bottom:10px solid transparent;margin-left:4px}
+.video-label{position:absolute;bottom:16px;left:20px;z-index:2;font-family:var(--font-head);font-weight:700;font-size:9px;text-transform:uppercase;letter-spacing:2px;color:rgba(255,255,255,.6)}
+
+/* ── Split Entry Hero ── */
+.service-split{display:grid;grid-template-columns:1.1fr 1fr;border-radius:14px;overflow:hidden}
+.service-split-panel{position:relative;min-height:290px;padding:52px 48px 44px;display:flex;flex-direction:column;justify-content:flex-end}
+.service-split-left{background:var(--navy)}
+.service-split-right{background:var(--cyan)}
+.split-tag{font-family:var(--font-head);font-weight:700;font-size:10px;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px}
+.split-title{font-family:var(--font-head);font-weight:900;font-size:26px;text-transform:uppercase;letter-spacing:3px;color:var(--white);line-height:1.15;margin-bottom:20px}
+.split-pills{display:flex;gap:10px;flex-wrap:wrap}
+.split-pill{font-family:var(--font-head);font-weight:800;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;padding:9px 18px;border-radius:6px;text-decoration:none;transition:all .2s}
+.split-pill-ghost{background:rgba(255,255,255,.1);color:rgba(255,255,255,.8);border:1.5px solid rgba(255,255,255,.3)}
+.split-pill-ghost:hover{background:rgba(255,255,255,.2);color:var(--white)}
+.split-pill-lime{background:var(--lime);color:var(--navy);border:1.5px solid transparent}
+.split-pill-lime:hover{background:#c4e03e}
+
+/* ── Cafe Layout (2-col sticky) ── */
+/* No align-items override — default stretch lets right col fill row height so sticky persists */
+.cafe-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:32px}
+.sticky-stack{position:sticky;top:148px}
+
+/* ── Creative Cafe Collage ── */
+.cafe-collage{border-radius:14px;overflow:hidden;background:var(--white);box-shadow:0 4px 28px rgba(0,0,0,.12)}
+.cafe-collage-main{position:relative;overflow:hidden}
+.cafe-collage-main .img-placeholder{aspect-ratio:1.35/1;border-radius:0}
+.cafe-collage-kpi{position:absolute;bottom:18px;left:18px;background:var(--navy);border-radius:10px;padding:11px 16px;text-align:center;box-shadow:0 4px 14px rgba(0,0,0,.35)}
+.cafe-collage-kpi .cn{font-family:var(--font-head);font-weight:900;font-size:28px;color:var(--cyan);line-height:1}
+.cafe-collage-kpi .cl{font-family:var(--font-body);font-size:9px;font-weight:600;color:rgba(255,255,255,.65);text-transform:uppercase;letter-spacing:.8px;margin-top:3px}
+.cafe-collage-inset{position:absolute;bottom:18px;right:18px;width:38%;border-radius:9px;overflow:hidden;box-shadow:0 6px 22px rgba(0,0,0,.4);border:3px solid var(--white)}
+.cafe-collage-inset .img-placeholder{aspect-ratio:1.2/1;border-radius:0}
+.cafe-collage-body{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--gray-light)}
+.cafe-collage-col{padding:16px 18px}
+.cafe-collage-col:first-child{border-right:1px solid var(--gray-light)}
+.cafe-collage-col-label{font-family:var(--font-head);font-weight:900;font-size:10px;color:var(--navy);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.cafe-collage-cta{padding:14px 18px;background:rgba(0,183,196,.05);border-top:1px solid var(--gray-light)}
+
+/* ── Contacts Section ── */
+.contacts-wrap{background:var(--navy);border-radius:12px;padding:32px 28px}
+.contacts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.contact-card{background:rgba(255,255,255,.06);border-radius:10px;padding:20px 18px;border-top:3px solid var(--cyan);transition:background .2s;cursor:pointer}
+.contact-card:hover{background:rgba(255,255,255,.11)}
+.contact-card-name{font-family:var(--font-head);font-weight:900;font-size:11px;color:var(--white);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px}
+.contact-card-row{height:7px;border-radius:3px;background:rgba(255,255,255,.15);margin-bottom:6px}
+.contact-card-cta{font-family:var(--font-head);font-weight:800;font-size:9px;color:var(--lime);text-transform:uppercase;letter-spacing:1.2px;margin-top:14px}
 </style>
 </head>
 <body>
@@ -38,10 +75,10 @@
 <div class="nav-center">
 <div class="nav-item"><a href="About_Us-OurMission_Confirm.html">About Us <span class="diamond"></span></a>
 <div class="dropdown">
-<a href="About_Us-StaffAndBoard_Confirm.html"><span class="diamond"></span> Staff and Board</a>
 <a href="About_Us-OurImpact_Confirm.html"><span class="diamond"></span> Our Impact</a>
+<a href="About_Us-StaffAndBoard_Confirm.html"><span class="diamond"></span> Staff and Board</a>
 <a href="About_Us-AnnualReports_Confirm.html"><span class="diamond"></span> Annual Reports</a>
-<a href="News-Government_Impact_Confirm.html"><span class="diamond"></span> Government Impact</a>
+<a href="About_Us-Contact_Us_Confirm.html"><span class="diamond"></span> Contact Us</a>
 </div></div>
 <div class="nav-item active"><a href="Get_Meals-Meal_Delivery_Confirm.html">Client Services <span class="diamond"></span></a>
 <div class="dropdown">
@@ -64,39 +101,439 @@
 <div class="dropdown">
 <a href="News-Direct_Confirm.html"><span class="diamond"></span> Stories</a>
 <a href="News-Events_Confirm.html"><span class="diamond"></span> Current Events</a>
+<a href="News-Government_Impact_Confirm.html"><span class="diamond"></span> Government Impact</a>
 </div></div>
 </div>
 <div class="nav-ctas"><a href="Ways_to_Give-Donate_Today_Draft.html" class="btn btn-donate">Donate</a><a href="Volunteer-Volunteer_Application_Draft.html" class="btn btn-volunteer">Volunteer</a></div>
 </div>
 </nav>
 
-<!-- Anchor Bar -->
+<!-- ── Anchor Bar (3 tabs) ── -->
 <div class="anchor-bar">
-<a href="#meal-delivery" class="active">Meal Delivery</a>
+<a href="#meal-delivery">Meal Delivery</a>
 <a href="#friendship-cafe">Friendship Cafe</a>
+<a href="#apply">Apply</a>
 </div>
 
 <div class="page">
 
-<!-- Title (no hero) -->
-<div class="section">
-<div class="section-title" style="font-size:28px;margin-bottom:12px" data-reveal="fade-up">Application for Services</div>
-<div style="height:4px;width:40px;background:var(--cyan);border-radius:2px;margin-bottom:16px"></div>
-<div class="text-lines" style="margin-bottom:8px" data-reveal="fade-up" data-reveal-delay="100">
-<div class="tl" style="width:100%"></div><div class="tl" style="width:95%"></div><div class="tl" style="width:88%"></div><div class="tl" style="width:72%"></div>
+<!-- ══════════════════════════════════════════════ -->
+<!-- SPLIT ENTRY HERO                              -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="section" style="margin-bottom:0;padding-top:8px">
+<div class="service-split" data-reveal="fade-up">
+
+  <!-- Left: Explore Our Services -->
+  <div class="service-split-panel service-split-left">
+    <div class="hero-x"></div>
+    <div style="position:relative;z-index:2">
+      <div class="split-tag" style="color:rgba(255,255,255,.55)">Browse Our Programs</div>
+      <div class="split-title">Explore Our<br>Services</div>
+      <div style="font-family:var(--font-body);font-size:13px;color:rgba(255,255,255,.55);margin-bottom:20px;line-height:1.5;max-width:320px">Learn about Meal Delivery and Friendship Cafes before applying.</div>
+      <div class="split-pills">
+        <a href="#meal-delivery" class="split-pill split-pill-ghost">Meal Delivery ↓</a>
+        <a href="#friendship-cafe" class="split-pill split-pill-ghost">Friendship Cafe ↓</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right: Apply to Services -->
+  <div class="service-split-panel service-split-right">
+    <div style="position:absolute;inset:0;opacity:.07">
+      <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="diag" width="28" height="28" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="28" stroke="white" stroke-width="2"/></pattern></defs><rect width="100%" height="100%" fill="url(#diag)"/></svg>
+    </div>
+    <div style="position:relative;z-index:2">
+      <div class="split-tag" style="color:rgba(255,255,255,.75)">Ready to Begin?</div>
+      <div class="split-title">Apply to<br>Services</div>
+      <div style="font-family:var(--font-body);font-size:13px;color:rgba(255,255,255,.75);margin-bottom:20px;line-height:1.5;max-width:280px">Complete our simple application to start receiving meals.</div>
+      <div class="split-pills">
+        <a href="#apply" class="split-pill split-pill-lime">Start Application →</a>
+      </div>
+    </div>
+  </div>
+
 </div>
 </div>
 
 <div class="page-break"></div>
 
-<!-- Call or Apply -->
+<!-- ══════════════════════════════════════════════ -->
+<!-- MEAL DELIVERY SECTION                         -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="section" id="meal-delivery">
+<div style="display:flex;align-items:center;gap:12px;margin-bottom:20px" data-reveal="fade-up">
+<div class="creative-icon">
+<svg viewBox="0 0 24 24" width="18" height="18"><path d="M3 11l19-9-9 19-2-8-8-2z" fill="white"/></svg>
+</div>
+<div class="section-title" style="margin-bottom:0;font-size:20px;letter-spacing:2px">What Exactly Is Meals on Wheels?</div>
+</div>
+
+<div style="display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:stretch">
+
+<!-- Left: Text + Image (flex col, image grows to match video stack height) -->
+<div style="display:flex;flex-direction:column;gap:20px">
+<div>
+<div class="text-lines" style="margin-bottom:16px" data-reveal="fade-right">
+<div class="tl" style="width:100%"></div><div class="tl" style="width:95%"></div><div class="tl" style="width:90%"></div><div class="tl" style="width:88%"></div><div class="tl" style="width:75%"></div>
+</div>
+<div class="text-lines" data-reveal="fade-right" data-reveal-delay="100">
+<div class="tl" style="width:100%"></div><div class="tl" style="width:92%"></div><div class="tl" style="width:85%"></div><div class="tl" style="width:65%"></div>
+</div>
+</div>
+<div class="img-placeholder" style="flex:1;min-height:200px;border-radius:12px" data-reveal="zoom-in"><span>Meals on Wheels Hero</span></div>
+</div>
+
+<!-- Right: 2 Video Embeds -->
+<div style="display:flex;flex-direction:column;gap:14px">
+<div class="video-card" style="aspect-ratio:1.8/1" data-reveal="fade-left">
+<div class="hero-x"></div>
+<div class="video-play" style="width:44px;height:44px"></div>
+<div class="video-label">Video — Vimeo Embed</div>
+</div>
+<div class="video-card" style="aspect-ratio:1.8/1" data-reveal="fade-left" data-reveal-delay="150">
+<div class="hero-x"></div>
+<div class="video-play" style="width:44px;height:44px"></div>
+<div class="video-label">Video — Vimeo Embed</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- Waitlist -->
 <div class="section">
-<div style="background:rgba(0,183,196,.06);border-left:4px solid var(--cyan);border-radius:0 10px 10px 0;padding:24px 28px;margin-bottom:32px" data-reveal="fade-right">
-<div style="font-family:var(--font-head);font-weight:900;font-size:16px;color:var(--navy);text-transform:uppercase;letter-spacing:1.5px">Call (###) ###-#### or use the application below to apply</div>
+<div class="section-title" style="font-size:18px;margin-bottom:16px" data-reveal="fade-up">Waitlist for Meals on Wheels</div>
+<div class="text-lines" style="margin-bottom:12px" data-reveal="fade-up" data-reveal-delay="80">
+<div class="tl" style="width:100%"></div><div class="tl" style="width:95%"></div><div class="tl" style="width:90%"></div><div class="tl" style="width:88%"></div><div class="tl" style="width:72%"></div>
+</div>
+<div class="text-lines" data-reveal="fade-up" data-reveal-delay="160">
+<div class="tl" style="width:100%"></div><div class="tl" style="width:92%"></div><div class="tl" style="width:85%"></div><div class="tl" style="width:60%"></div>
+</div>
+</div>
+
+<hr class="dashed-break">
+
+<!-- Meal Delivery FAQ -->
+<div class="faq-section" style="margin-bottom:0">
+<div class="section-title" style="margin-bottom:20px" data-reveal="fade-up">Meal Delivery — Frequently Asked Questions</div>
+<div class="faq-item" data-reveal="fade-up">
+<div class="faq-q">How do I sign up for meal delivery?</div>
+<div class="faq-a"><div class="text-lines"><div class="tl" style="width:100%"></div><div class="tl" style="width:85%"></div><div class="tl" style="width:60%"></div></div></div>
+</div>
+<div class="faq-item" data-reveal="fade-up">
+<div class="faq-q">What types of meals are available?</div>
+<div class="faq-a"><div class="text-lines"><div class="tl" style="width:100%"></div><div class="tl" style="width:90%"></div><div class="tl" style="width:70%"></div></div></div>
+</div>
+<div class="faq-item" data-reveal="fade-up">
+<div class="faq-q">Can I choose between hot and frozen meals?</div>
+<div class="faq-a"><div class="text-lines"><div class="tl" style="width:100%"></div><div class="tl" style="width:88%"></div><div class="tl" style="width:55%"></div></div></div>
+</div>
+<div class="faq-item" data-reveal="fade-up">
+<div class="faq-q">Is there a cost for meal delivery services?</div>
+<div class="faq-a"><div class="text-lines"><div class="tl" style="width:100%"></div><div class="tl" style="width:82%"></div><div class="tl" style="width:65%"></div></div></div>
+</div>
+</div>
+
+<hr class="dashed-break">
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- FRIENDSHIP CAFE SECTION                       -->
+<!-- 2-col sticky layout: content left, collage right -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="section" id="friendship-cafe">
+
+<div style="display:flex;align-items:center;gap:12px;margin-bottom:16px" data-reveal="fade-up">
+<div class="creative-icon">
+<svg viewBox="0 0 24 24" width="18" height="18"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" fill="none" stroke="white" stroke-width="2"/><circle cx="9" cy="7" r="4" fill="none" stroke="white" stroke-width="2"/><path d="M23 21v-2a4 4 0 0 0-3-3.87" fill="none" stroke="white" stroke-width="2"/><path d="M16 3.13a4 4 0 0 1 0 7.75" fill="none" stroke="white" stroke-width="2"/></svg>
+</div>
+<div class="section-title" style="margin-bottom:0">What Are Friendship Cafes</div>
+</div>
+<div class="text-lines" style="margin-bottom:28px" data-reveal="fade-up" data-reveal-delay="100">
+<div class="tl" style="width:100%"></div><div class="tl" style="width:92%"></div><div class="tl" style="width:85%"></div><div class="tl" style="width:70%"></div>
+</div>
+
+<!-- 2-column layout: content + sticky collage -->
+<div class="cafe-grid">
+
+  <!-- ── Left: content card + quote ── -->
+  <div style="display:flex;flex-direction:column;gap:28px">
+
+    <!-- Content card -->
+    <div style="background:var(--white);border-radius:12px;box-shadow:0 2px 16px rgba(0,0,0,.06);overflow:hidden" data-reveal="fade-right">
+      <div style="background:var(--navy);aspect-ratio:2/1;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden">
+        <div class="hero-x"></div>
+        <div style="position:relative;z-index:2;text-align:center">
+          <div style="font-family:var(--font-head);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:2px;color:rgba(255,255,255,.5)">Embedded Content — Friendship Cafe</div>
+        </div>
+      </div>
+      <div style="padding:28px">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px">
+          <div>
+            <div class="text-lines" style="margin-bottom:12px">
+              <div class="tl" style="width:100%"></div><div class="tl" style="width:95%"></div><div class="tl" style="width:88%"></div><div class="tl" style="width:80%"></div><div class="tl" style="width:70%"></div>
+            </div>
+            <div class="text-lines">
+              <div class="tl" style="width:100%"></div><div class="tl" style="width:85%"></div><div class="tl" style="width:60%"></div>
+            </div>
+          </div>
+          <div class="kanban-card" style="aspect-ratio:1.2/1">
+            <div class="img-placeholder" style="aspect-ratio:auto"><span>Cafe Photo</span></div>
+            <div class="kanban-overlay"></div>
+            <div class="kanban-content"><div class="kanban-cta" style="font-size:11px">Volunteer at a Cafe <span style="font-size:15px">→</span></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="img-placeholder" style="aspect-ratio:2.2/1;border-radius:0"><span>Friendship Cafe Hero</span></div>
+      <div style="padding:24px 28px">
+        <div class="text-lines" style="margin-bottom:10px">
+          <div class="tl" style="width:100%"></div><div class="tl" style="width:92%"></div><div class="tl" style="width:88%"></div><div class="tl" style="width:95%"></div><div class="tl" style="width:78%"></div>
+        </div>
+        <div class="text-lines">
+          <div class="tl" style="width:100%"></div><div class="tl" style="width:85%"></div><div class="tl" style="width:60%"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quote -->
+    <div data-reveal="fade-up">
+      <div style="border-left:3px solid var(--cyan);padding-left:20px;margin-bottom:14px">
+        <div class="text-lines">
+          <div class="tl" style="width:100%"></div><div class="tl" style="width:95%"></div><div class="tl" style="width:88%"></div><div class="tl" style="width:70%"></div>
+        </div>
+      </div>
+      <div style="padding-left:23px;display:flex;align-items:center;gap:8px">
+        <div style="width:8px;height:8px;background:var(--lime);border-radius:2px;transform:rotate(45deg);flex-shrink:0"></div>
+        <div style="height:9px;width:120px;background:var(--navy);border-radius:3px;opacity:.6"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ── Right: Creative sticky collage ── -->
+  <div>
+  <div class="sticky-stack">
+  <div class="cafe-collage" data-reveal="fade-left">
+
+    <!-- Main image with overlaid KPI + inset photo -->
+    <div class="cafe-collage-main">
+      <div class="img-placeholder" style="aspect-ratio:1.35/1;border-radius:0"><span>Friendship Cafe</span></div>
+      <!-- KPI badge -->
+      <div class="cafe-collage-kpi">
+        <div class="cn">11</div>
+        <div class="cl">Cafes in Wake County</div>
+      </div>
+      <!-- Inset photo -->
+      <div class="cafe-collage-inset">
+        <div class="img-placeholder" style="aspect-ratio:1.2/1;border-radius:0"><span>Cafe Interior</span></div>
+      </div>
+    </div>
+
+    <!-- Hours + Find Cafe grid -->
+    <div class="cafe-collage-body">
+      <div class="cafe-collage-col">
+        <div class="cafe-collage-col-label">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Cafe Hours
+        </div>
+        <div class="text-lines">
+          <div class="tl" style="width:90%"></div><div class="tl" style="width:72%"></div><div class="tl" style="width:80%"></div>
+        </div>
+      </div>
+      <div class="cafe-collage-col">
+        <div class="cafe-collage-col-label">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Find Your Cafe
+        </div>
+        <div class="text-lines">
+          <div class="tl" style="width:85%"></div><div class="tl" style="width:65%"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cafe-collage-cta">
+      <a href="#cafe-contacts" class="cta-btn cta-primary" style="font-size:10px;padding:11px 20px;width:100%;justify-content:center">Find Your Nearest Cafe →</a>
+    </div>
+
+  </div>
+  </div>
+  </div>
+
+</div><!-- end cafe-grid -->
+</div><!-- end friendship-cafe section -->
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- FULL-WIDTH: MAP + CONTACTS (split from 2-col) -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="section" id="cafe-contacts">
+
+<!-- Interactive Map — full-width, square, sticky stops above here -->
+<div style="display:flex;align-items:center;gap:12px;margin-bottom:18px" data-reveal="fade-up">
+<div class="creative-icon">
+<svg viewBox="0 0 24 24" width="18" height="18"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" fill="none" stroke="white" stroke-width="2"/><circle cx="12" cy="10" r="3" fill="none" stroke="white" stroke-width="2"/></svg>
+</div>
+<div class="section-title" style="margin-bottom:0;font-size:18px">Interactive Map</div>
+</div>
+<div class="map-placeholder" style="aspect-ratio:1/1;margin-bottom:36px" data-reveal="zoom-in">
+<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--gray-mid)" stroke-width="1.5" opacity=".4"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+<span style="font-family:var(--font-head);font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--gray-mid);font-weight:700">Embedded Google Map — All Wake County Cafe Locations</span>
+</div>
+
+<!-- Friendship Cafe Contacts — full-width grid -->
+<div data-reveal="fade-up">
+<div style="display:flex;align-items:center;gap:12px;margin-bottom:20px">
+<div class="creative-icon">
+<svg viewBox="0 0 24 24" width="18" height="18"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.14 12 19.79 19.79 0 0 1 1.07 3.4 2 2 0 0 1 3.07 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91A16 16 0 0 0 13 14.83l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16v.92z" fill="none" stroke="white" stroke-width="2"/></svg>
+</div>
+<div class="section-title" style="margin-bottom:0;font-size:20px">Friendship Cafe Contacts</div>
+</div>
+
+<div class="contacts-wrap">
+<div class="contacts-grid">
+
+<div class="contact-card">
+<div class="contact-card-name">Cafe Location 01</div>
+<div class="contact-card-row" style="width:85%"></div>
+<div class="contact-card-row" style="width:65%"></div>
+<div class="contact-card-row" style="width:75%"></div>
+<div class="contact-card-row" style="width:55%"></div>
+<div class="contact-card-cta">Get Directions →</div>
+</div>
+
+<div class="contact-card">
+<div class="contact-card-name">Cafe Location 02</div>
+<div class="contact-card-row" style="width:90%"></div>
+<div class="contact-card-row" style="width:70%"></div>
+<div class="contact-card-row" style="width:80%"></div>
+<div class="contact-card-row" style="width:50%"></div>
+<div class="contact-card-cta">Get Directions →</div>
+</div>
+
+<div class="contact-card">
+<div class="contact-card-name">Cafe Location 03</div>
+<div class="contact-card-row" style="width:80%"></div>
+<div class="contact-card-row" style="width:60%"></div>
+<div class="contact-card-row" style="width:72%"></div>
+<div class="contact-card-row" style="width:58%"></div>
+<div class="contact-card-cta">Get Directions →</div>
+</div>
+
+<div class="contact-card">
+<div class="contact-card-name">Cafe Location 04</div>
+<div class="contact-card-row" style="width:88%"></div>
+<div class="contact-card-row" style="width:68%"></div>
+<div class="contact-card-row" style="width:76%"></div>
+<div class="contact-card-row" style="width:52%"></div>
+<div class="contact-card-cta">Get Directions →</div>
+</div>
+
+<div class="contact-card">
+<div class="contact-card-name">Cafe Location 05</div>
+<div class="contact-card-row" style="width:82%"></div>
+<div class="contact-card-row" style="width:64%"></div>
+<div class="contact-card-row" style="width:78%"></div>
+<div class="contact-card-row" style="width:56%"></div>
+<div class="contact-card-cta">Get Directions →</div>
+</div>
+
+<div class="contact-card">
+<div class="contact-card-name">Cafe Location 06</div>
+<div class="contact-card-row" style="width:86%"></div>
+<div class="contact-card-row" style="width:66%"></div>
+<div class="contact-card-row" style="width:74%"></div>
+<div class="contact-card-row" style="width:54%"></div>
+<div class="contact-card-cta">Get Directions →</div>
+</div>
+
+<div class="contact-card">
+<div class="contact-card-name">Cafe Location 07</div>
+<div class="contact-card-row" style="width:84%"></div>
+<div class="contact-card-row" style="width:62%"></div>
+<div class="contact-card-row" style="width:70%"></div>
+<div class="contact-card-row" style="width:48%"></div>
+<div class="contact-card-cta">Get Directions →</div>
+</div>
+
+<div class="contact-card">
+<div class="contact-card-name">Cafe Location 08</div>
+<div class="contact-card-row" style="width:91%"></div>
+<div class="contact-card-row" style="width:71%"></div>
+<div class="contact-card-row" style="width:79%"></div>
+<div class="contact-card-row" style="width:59%"></div>
+<div class="contact-card-cta">Get Directions →</div>
+</div>
+
+<div class="contact-card">
+<div class="contact-card-name">Cafe Location 09</div>
+<div class="contact-card-row" style="width:79%"></div>
+<div class="contact-card-row" style="width:61%"></div>
+<div class="contact-card-row" style="width:73%"></div>
+<div class="contact-card-row" style="width:53%"></div>
+<div class="contact-card-cta">Get Directions →</div>
+</div>
+
+<div class="contact-card">
+<div class="contact-card-name">Cafe Location 10</div>
+<div class="contact-card-row" style="width:87%"></div>
+<div class="contact-card-row" style="width:67%"></div>
+<div class="contact-card-row" style="width:77%"></div>
+<div class="contact-card-row" style="width:57%"></div>
+<div class="contact-card-cta">Get Directions →</div>
+</div>
+
+<div class="contact-card">
+<div class="contact-card-name">Cafe Location 11</div>
+<div class="contact-card-row" style="width:83%"></div>
+<div class="contact-card-row" style="width:63%"></div>
+<div class="contact-card-row" style="width:71%"></div>
+<div class="contact-card-row" style="width:51%"></div>
+<div class="contact-card-cta">Get Directions →</div>
+</div>
+
+</div><!-- end contacts-grid -->
+</div><!-- end contacts-wrap -->
+</div>
+</div>
+
+<hr class="dashed-break">
+
+<!-- Friendship Cafe FAQ -->
+<div class="faq-section" style="margin-bottom:0">
+<div class="section-title" style="margin-bottom:20px" data-reveal="fade-up">Friendship Cafe — Frequently Asked Questions</div>
+<div class="faq-item" data-reveal="fade-up">
+<div class="faq-q">What is a Friendship Cafe?</div>
+<div class="faq-a"><div class="text-lines"><div class="tl" style="width:100%"></div><div class="tl" style="width:85%"></div><div class="tl" style="width:60%"></div></div></div>
+</div>
+<div class="faq-item" data-reveal="fade-up">
+<div class="faq-q">Where are Friendship Cafes located?</div>
+<div class="faq-a"><div class="text-lines"><div class="tl" style="width:100%"></div><div class="tl" style="width:88%"></div><div class="tl" style="width:70%"></div></div></div>
+</div>
+<div class="faq-item" data-reveal="fade-up">
+<div class="faq-q">Do I need to register to eat at a Friendship Cafe?</div>
+<div class="faq-a"><div class="text-lines"><div class="tl" style="width:100%"></div><div class="tl" style="width:90%"></div><div class="tl" style="width:55%"></div></div></div>
+</div>
+<div class="faq-item" data-reveal="fade-up">
+<div class="faq-q">Can I volunteer at a Friendship Cafe?</div>
+<div class="faq-a"><div class="text-lines"><div class="tl" style="width:100%"></div><div class="tl" style="width:82%"></div><div class="tl" style="width:65%"></div></div></div>
+</div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- APPLY SECTION                                 -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="section" id="apply">
+
+<!-- Call-to-action banner -->
+<div style="background:rgba(0,183,196,.07);border-left:4px solid var(--cyan);border-radius:0 10px 10px 0;padding:22px 28px;margin-bottom:36px" data-reveal="fade-right">
+<div style="font-family:var(--font-head);font-weight:900;font-size:15px;color:var(--navy);text-transform:uppercase;letter-spacing:1.5px">Call <span style="color:var(--cyan)">(###) ###-####</span> or use the application below to apply</div>
 </div>
 
 <!-- How It Works — 4 Steps -->
-<div style="margin-bottom:32px" data-reveal="fade-up">
+<div style="margin-bottom:36px" data-reveal="fade-up">
 <div class="section-title" style="font-size:18px;margin-bottom:20px">How It Works</div>
 <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px">
 <div style="text-align:center">
@@ -122,33 +559,24 @@
 </div>
 </div>
 
-<!-- Embedded Eligibility Quiz -->
+<!-- Eligibility Quiz -->
 <div style="margin-bottom:32px" data-reveal="fade-up">
 <div class="section-title" style="font-size:18px;margin-bottom:8px">Eligibility Quiz</div>
-<div style="font-family:var(--font-body);font-size:14px;color:#666;margin-bottom:20px">Answer a few quick questions to check if you or a loved one may qualify for our services.</div>
-<div style="background:var(--white);border-radius:12px;box-shadow:0 2px 16px rgba(0,0,0,.06);padding:32px 28px">
-<div style="margin-bottom:24px">
-<div style="font-family:var(--font-head);font-weight:800;font-size:12px;color:var(--navy);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px">1. Are you or the applicant 60 years of age or older?</div>
-<div style="display:flex;gap:12px">
-<div style="flex:1;padding:12px 16px;border:2px solid var(--gray-light);border-radius:8px;text-align:center;font-family:var(--font-head);font-weight:700;font-size:12px;color:var(--navy);text-transform:uppercase;letter-spacing:1px;cursor:pointer">Yes</div>
-<div style="flex:1;padding:12px 16px;border:2px solid var(--gray-light);border-radius:8px;text-align:center;font-family:var(--font-head);font-weight:700;font-size:12px;color:var(--navy);text-transform:uppercase;letter-spacing:1px;cursor:pointer">No</div>
+<div style="font-family:var(--font-body);font-size:13px;color:#666;margin-bottom:18px">Answer a few quick questions to check if you or a loved one may qualify.</div>
+<div style="background:var(--white);border-radius:12px;box-shadow:0 2px 16px rgba(0,0,0,.06);padding:28px 24px">
+<div style="margin-bottom:22px">
+<div style="font-family:var(--font-head);font-weight:800;font-size:12px;color:var(--navy);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:10px">1. Are you or the applicant 60 years of age or older?</div>
+<div style="display:flex;gap:12px"><div style="flex:1;padding:11px 16px;border:2px solid var(--gray-light);border-radius:8px;text-align:center;font-family:var(--font-head);font-weight:700;font-size:12px;color:var(--navy);text-transform:uppercase;letter-spacing:1px;cursor:pointer">Yes</div><div style="flex:1;padding:11px 16px;border:2px solid var(--gray-light);border-radius:8px;text-align:center;font-family:var(--font-head);font-weight:700;font-size:12px;color:var(--navy);text-transform:uppercase;letter-spacing:1px;cursor:pointer">No</div></div>
 </div>
+<div style="margin-bottom:22px">
+<div style="font-family:var(--font-head);font-weight:800;font-size:12px;color:var(--navy);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:10px">2. Do you reside in Wake County, NC?</div>
+<div style="display:flex;gap:12px"><div style="flex:1;padding:11px 16px;border:2px solid var(--gray-light);border-radius:8px;text-align:center;font-family:var(--font-head);font-weight:700;font-size:12px;color:var(--navy);text-transform:uppercase;letter-spacing:1px;cursor:pointer">Yes</div><div style="flex:1;padding:11px 16px;border:2px solid var(--gray-light);border-radius:8px;text-align:center;font-family:var(--font-head);font-weight:700;font-size:12px;color:var(--navy);text-transform:uppercase;letter-spacing:1px;cursor:pointer">No</div></div>
 </div>
-<div style="margin-bottom:24px">
-<div style="font-family:var(--font-head);font-weight:800;font-size:12px;color:var(--navy);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px">2. Do you reside in Wake County, NC?</div>
-<div style="display:flex;gap:12px">
-<div style="flex:1;padding:12px 16px;border:2px solid var(--gray-light);border-radius:8px;text-align:center;font-family:var(--font-head);font-weight:700;font-size:12px;color:var(--navy);text-transform:uppercase;letter-spacing:1px;cursor:pointer">Yes</div>
-<div style="flex:1;padding:12px 16px;border:2px solid var(--gray-light);border-radius:8px;text-align:center;font-family:var(--font-head);font-weight:700;font-size:12px;color:var(--navy);text-transform:uppercase;letter-spacing:1px;cursor:pointer">No</div>
+<div style="margin-bottom:22px">
+<div style="font-family:var(--font-head);font-weight:800;font-size:12px;color:var(--navy);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:10px">3. Are you homebound or have difficulty preparing meals?</div>
+<div style="display:flex;gap:12px"><div style="flex:1;padding:11px 16px;border:2px solid var(--gray-light);border-radius:8px;text-align:center;font-family:var(--font-head);font-weight:700;font-size:12px;color:var(--navy);text-transform:uppercase;letter-spacing:1px;cursor:pointer">Yes</div><div style="flex:1;padding:11px 16px;border:2px solid var(--gray-light);border-radius:8px;text-align:center;font-family:var(--font-head);font-weight:700;font-size:12px;color:var(--navy);text-transform:uppercase;letter-spacing:1px;cursor:pointer">No</div></div>
 </div>
-</div>
-<div style="margin-bottom:24px">
-<div style="font-family:var(--font-head);font-weight:800;font-size:12px;color:var(--navy);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px">3. Are you homebound or have difficulty preparing meals?</div>
-<div style="display:flex;gap:12px">
-<div style="flex:1;padding:12px 16px;border:2px solid var(--gray-light);border-radius:8px;text-align:center;font-family:var(--font-head);font-weight:700;font-size:12px;color:var(--navy);text-transform:uppercase;letter-spacing:1px;cursor:pointer">Yes</div>
-<div style="flex:1;padding:12px 16px;border:2px solid var(--gray-light);border-radius:8px;text-align:center;font-family:var(--font-head);font-weight:700;font-size:12px;color:var(--navy);text-transform:uppercase;letter-spacing:1px;cursor:pointer">No</div>
-</div>
-</div>
-<div style="background:rgba(0,183,196,.06);border-left:4px solid var(--cyan);border-radius:0 8px 8px 0;padding:16px 20px">
+<div style="background:rgba(0,183,196,.06);border-left:4px solid var(--cyan);border-radius:0 8px 8px 0;padding:14px 18px">
 <div style="font-family:var(--font-head);font-weight:800;font-size:12px;color:var(--navy);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:4px">Result</div>
 <div style="font-family:var(--font-body);font-size:13px;color:#555">Complete the questions above to see if you may be eligible for our services.</div>
 </div>
@@ -157,331 +585,39 @@
 
 <div class="page-break"></div>
 
-<!-- Full Application Form Placeholder -->
+<!-- Full Application Form -->
 <div class="form-placeholder" data-reveal="fade-up">
 <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--gray-mid)" stroke-width="1.5" opacity=".5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
 <div class="form-placeholder-label">Full Application Form</div>
 <div class="form-placeholder-sub">Form fields managed by MOW staff</div>
 </div>
 
-<!-- Submit CTA -->
-<div style="margin-top:32px;text-align:left">
-<a href="#" class="cta-btn cta-primary" style="font-size:14px;padding:16px 36px">Submit / Enter →</a>
-</div>
-</div>
-
-<hr class="dashed-break">
-
-<!-- ══════════════════════════════════════════════ -->
-<!-- ===== MEAL DELIVERY SECTION ===== -->
-<!-- ══════════════════════════════════════════════ -->
-<div class="section" id="meal-delivery">
-<div style="display:flex;align-items:center;gap:12px;margin-bottom:16px" data-reveal="fade-up">
-<div class="creative-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="white" stroke-width="2"/><polygon points="10,8 16,12 10,16" fill="white"/></svg></div>
-<div class="section-title" style="margin-bottom:0">What Exactly Is Meals on Wheels</div>
+<div style="margin-top:32px;display:flex;align-items:center;gap:16px;flex-wrap:wrap">
+<a href="#" class="cta-btn cta-primary" style="font-size:14px;padding:16px 36px">Submit Application →</a>
+<span style="font-family:var(--font-body);font-size:13px;color:var(--gray-mid)">or call <strong style="color:var(--navy)">(###) ###-####</strong></span>
 </div>
 
-<div style="display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:start">
-<!-- Left: Text + Hero Image -->
-<div style="display:flex;flex-direction:column;gap:20px">
-<div>
-<div class="text-lines" style="margin-bottom:16px" data-reveal="fade-right">
-<div class="tl" style="width:100%"></div><div class="tl" style="width:95%"></div><div class="tl" style="width:90%"></div><div class="tl" style="width:88%"></div><div class="tl" style="width:75%"></div>
-</div>
-<div class="text-lines" data-reveal="fade-right" data-reveal-delay="100">
-<div class="tl" style="width:100%"></div><div class="tl" style="width:92%"></div><div class="tl" style="width:85%"></div><div class="tl" style="width:65%"></div>
-</div>
-</div>
-<div class="img-placeholder" style="flex:1;min-height:320px;border-radius:12px" data-reveal="zoom-in"><span>Meals on Wheels Hero</span></div>
-</div>
-<!-- Right: 2 video previews -->
-<div style="display:flex;flex-direction:column;gap:14px">
-<div class="video-card" style="aspect-ratio:1.8/1" data-reveal="fade-left">
-<div class="hero-x"></div>
-<div class="video-play" style="width:40px;height:40px"></div>
-<div class="video-label" style="font-size:9px">Video — Vimeo Embed</div>
-</div>
-<div class="video-card" style="aspect-ratio:1.8/1" data-reveal="fade-left" data-reveal-delay="150">
-<div class="hero-x"></div>
-<div class="video-play" style="width:40px;height:40px"></div>
-<div class="video-label" style="font-size:9px">Video — Vimeo Embed</div>
-</div>
-</div>
-</div>
 </div>
 
 <div class="page-break"></div>
 
-<!-- KPI + Eligibility Link -->
+<!-- Resources + Contact footer strip -->
 <div class="section">
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center" data-reveal="fade-up">
-<div class="kpi-box">
-<div class="kpi-num">1,500+</div>
-<div class="kpi-label">Meals Delivered Daily</div>
-</div>
-<div style="display:flex;align-items:center;gap:16px;background:var(--white);border-radius:12px;padding:28px 24px;box-shadow:0 2px 16px rgba(0,0,0,.06)">
-<div class="creative-icon" style="width:48px;height:48px"><svg viewBox="0 0 24 24" width="22" height="22"><circle cx="11" cy="11" r="7" fill="none" stroke="white" stroke-width="2"/><path d="M16 16l4 4" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>
-<div>
-<h4 style="font-family:var(--font-head);font-weight:900;font-size:16px;color:var(--navy);text-transform:uppercase;letter-spacing:2px;margin-bottom:6px">Am I Eligible?</h4>
-<a href="Get_Meals-Meal_Delivery_Confirm.html" class="cta-btn cta-primary" style="font-size:11px;padding:10px 20px">Browse Our Menus →</a>
-</div>
-</div>
-</div>
-</div>
-
-<div class="page-break"></div>
-
-<!-- Eligibility + Nutritional Value -->
-<div class="section">
-<div style="background:var(--white);border-radius:12px;box-shadow:0 2px 16px rgba(0,0,0,.06);overflow:hidden;padding:32px 28px" data-reveal="fade-up">
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:28px">
-<div>
-<h4 style="font-family:var(--font-head);font-weight:900;font-size:15px;color:var(--navy);text-transform:uppercase;letter-spacing:2px;margin-bottom:12px">Eligibility</h4>
-<div class="text-lines">
-<div class="tl" style="width:100%"></div><div class="tl" style="width:92%"></div><div class="tl" style="width:85%"></div><div class="tl" style="width:70%"></div>
-</div>
-</div>
-<div>
-<h4 style="font-family:var(--font-head);font-weight:900;font-size:15px;color:var(--navy);text-transform:uppercase;letter-spacing:2px;margin-bottom:12px">Nutritional Value</h4>
-<div class="text-lines">
-<div class="tl" style="width:100%"></div><div class="tl" style="width:88%"></div><div class="tl" style="width:92%"></div><div class="tl" style="width:65%"></div>
-</div>
-</div>
-</div>
-<div style="height:1px;background:var(--gray-light);margin-bottom:28px"></div>
-<div style="display:grid;grid-template-columns:1.2fr 1fr;gap:24px;align-items:start">
-<div>
-<div class="text-lines" style="margin-bottom:16px">
-<div class="tl" style="width:100%"></div><div class="tl" style="width:95%"></div><div class="tl" style="width:88%"></div><div class="tl" style="width:80%"></div>
-</div>
-<div class="text-lines" style="margin-bottom:20px">
-<div class="tl" style="width:100%"></div><div class="tl" style="width:90%"></div><div class="tl" style="width:85%"></div><div class="tl" style="width:72%"></div>
-</div>
-<a href="Get_Meals-Meal_Delivery_Confirm.html" class="cta-btn cta-primary" style="font-size:11px;padding:10px 20px">More Information →</a>
-</div>
-<div class="img-placeholder" style="aspect-ratio:1.2/1;border-radius:12px"><span>Program Detail</span></div>
-</div>
-</div>
-</div>
-
-<!-- Waitlist -->
-<div class="section">
-<div style="margin-bottom:32px" data-reveal="fade-up">
-<div class="section-title" style="font-size:18px">Waitlist for Meals on Wheels</div>
-<div class="text-lines" style="margin-bottom:12px">
-<div class="tl" style="width:100%"></div><div class="tl" style="width:95%"></div><div class="tl" style="width:90%"></div><div class="tl" style="width:88%"></div><div class="tl" style="width:72%"></div>
-</div>
-<div class="text-lines">
-<div class="tl" style="width:100%"></div><div class="tl" style="width:92%"></div><div class="tl" style="width:85%"></div><div class="tl" style="width:60%"></div>
-</div>
-</div>
-
-<!-- Government Funding Impact -->
-<div class="info-box" style="border-left:4px solid var(--coral)" data-reveal="fade-up">
-<h4 style="color:var(--coral)">How Government Funding Has Impacted Us</h4>
-<div class="text-lines" style="margin-bottom:20px">
-<div class="tl" style="width:100%"></div><div class="tl" style="width:90%"></div><div class="tl" style="width:85%"></div><div class="tl" style="width:65%"></div>
-</div>
-<div style="text-align:center">
-<a href="News-Government_Impact_Confirm.html" class="cta-btn cta-secondary" style="font-size:11px;padding:10px 24px">Learn More →</a>
-</div>
-</div>
-</div>
-
-<hr class="dashed-break">
-
-<!-- Meal Delivery FAQ -->
-<div class="faq-section" style="margin-bottom:48px">
-<div class="section-title" style="margin-bottom:20px" data-reveal="fade-up">Meal Delivery — Frequently Asked Questions</div>
-<div class="faq-item" data-reveal="fade-up">
-<div class="faq-q">How do I sign up for meal delivery?</div>
-<div class="faq-a"><div class="text-lines"><div class="tl" style="width:100%"></div><div class="tl" style="width:85%"></div><div class="tl" style="width:60%"></div></div></div>
-</div>
-<div class="faq-item" data-reveal="fade-up">
-<div class="faq-q">What types of meals are available?</div>
-<div class="faq-a"><div class="text-lines"><div class="tl" style="width:100%"></div><div class="tl" style="width:90%"></div><div class="tl" style="width:70%"></div></div></div>
-</div>
-<div class="faq-item" data-reveal="fade-up">
-<div class="faq-q">Can I choose between hot and frozen meals?</div>
-<div class="faq-a"><div class="text-lines"><div class="tl" style="width:100%"></div><div class="tl" style="width:88%"></div><div class="tl" style="width:55%"></div></div></div>
-</div>
-<div class="faq-item" data-reveal="fade-up">
-<div class="faq-q">Is there a cost for meal delivery services?</div>
-<div class="faq-a"><div class="text-lines"><div class="tl" style="width:100%"></div><div class="tl" style="width:82%"></div><div class="tl" style="width:65%"></div></div></div>
-</div>
-</div>
-
-<hr class="dashed-break">
-
-<!-- ══════════════════════════════════════════════ -->
-<!-- ===== FRIENDSHIP CAFE SECTION ===== -->
-<!-- ══════════════════════════════════════════════ -->
-<div class="section" id="friendship-cafe">
-<div style="display:flex;align-items:center;gap:12px;margin-bottom:16px" data-reveal="fade-up">
-<div class="creative-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" fill="none" stroke="white" stroke-width="2"/><circle cx="9" cy="7" r="4" fill="none" stroke="white" stroke-width="2"/><path d="M23 21v-2a4 4 0 0 0-3-3.87" fill="none" stroke="white" stroke-width="2"/><path d="M16 3.13a4 4 0 0 1 0 7.75" fill="none" stroke="white" stroke-width="2"/></svg></div>
-<div class="section-title" style="margin-bottom:0">What Are Friendship Cafes</div>
-</div>
-<div class="text-lines" style="margin-bottom:24px" data-reveal="fade-up" data-reveal-delay="100">
-<div class="tl" style="width:100%"></div><div class="tl" style="width:92%"></div><div class="tl" style="width:85%"></div><div class="tl" style="width:70%"></div>
-</div>
-
-<!-- Two-column: Content left + Sticky cards right -->
-<div class="cafe-grid">
-<div style="display:flex;flex-direction:column;gap:32px">
-
-<!-- Content card -->
-<div style="background:var(--white);border-radius:12px;box-shadow:0 2px 16px rgba(0,0,0,.06);overflow:hidden" data-reveal="fade-right">
-<div style="background:var(--navy);aspect-ratio:2/1;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden">
-<div class="hero-x"></div>
-<div style="position:relative;z-index:2;text-align:center">
-<div style="font-family:var(--font-head);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:2px;color:rgba(255,255,255,.6)">Embedded Content — Friendship Cafe</div>
-</div>
-</div>
-<div style="padding:28px 28px 0">
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:24px">
-<div>
-<div class="text-lines" style="margin-bottom:12px">
-<div class="tl" style="width:100%"></div><div class="tl" style="width:95%"></div><div class="tl" style="width:88%"></div><div class="tl" style="width:92%"></div><div class="tl" style="width:80%"></div>
-</div>
-<div class="text-lines">
-<div class="tl" style="width:100%"></div><div class="tl" style="width:85%"></div><div class="tl" style="width:65%"></div>
-</div>
-</div>
-<div class="kanban-card" style="aspect-ratio:1.2/1">
-<div class="img-placeholder" style="aspect-ratio:auto"><span>Cafe Photo</span></div>
-<div class="kanban-overlay"></div>
-<div class="kanban-content"><div class="kanban-cta" style="font-size:11px">Volunteer at Friendship Cafe <span style="font-size:16px">→</span></div></div>
-</div>
-</div>
-</div>
-<div class="img-placeholder" style="aspect-ratio:2/1;border-radius:0"><span>Friendship Cafe Hero</span></div>
-<div style="padding:24px 28px">
-<div class="text-lines" style="margin-bottom:12px">
-<div class="tl" style="width:100%"></div><div class="tl" style="width:92%"></div><div class="tl" style="width:88%"></div><div class="tl" style="width:95%"></div><div class="tl" style="width:78%"></div>
-</div>
-<div class="text-lines">
-<div class="tl" style="width:100%"></div><div class="tl" style="width:85%"></div><div class="tl" style="width:60%"></div>
-</div>
-</div>
-</div>
-
-<!-- Quote -->
-<div style="margin-top:0" data-reveal="fade-up">
-<div style="border-left:3px solid var(--cyan);padding-left:20px;margin-bottom:14px">
-<div class="text-lines">
-<div class="tl" style="width:100%"></div><div class="tl" style="width:95%"></div><div class="tl" style="width:88%"></div><div class="tl" style="width:70%"></div>
-</div>
-</div>
-<div style="padding-left:23px;display:flex;align-items:center;gap:8px">
-<div style="width:8px;height:8px;background:var(--lime);border-radius:2px;transform:rotate(45deg);flex-shrink:0"></div>
-<div style="height:9px;width:120px;background:var(--navy);border-radius:3px;opacity:.6"></div>
-</div>
-</div>
-
-<!-- Interactive Map -->
-<div data-reveal="fade-up">
-<div style="display:flex;align-items:center;gap:12px;margin-bottom:20px">
-<div class="creative-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" fill="none" stroke="white" stroke-width="2"/><circle cx="12" cy="10" r="3" fill="none" stroke="white" stroke-width="2"/></svg></div>
-<div class="section-title" style="margin-bottom:0">Interactive Map</div>
-</div>
-<div class="map-placeholder" style="aspect-ratio:2/1;margin-bottom:32px">
-<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--gray-mid)" stroke-width="1.5" opacity=".4"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-<span style="font-family:var(--font-head);font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--gray-mid);font-weight:700;position:relative;z-index:1">Embedded Google Map</span>
-</div>
-</div>
-
-<!-- Location Grid -->
-<div data-reveal="fade-up">
-<div style="display:flex;align-items:center;gap:12px;margin-bottom:20px">
-<div class="creative-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" fill="none" stroke="white" stroke-width="2"/></svg></div>
-<div class="section-title" style="margin-bottom:0;font-size:18px">Friendship Cafe Locations</div>
-</div>
-<div class="location-grid">
-<div class="location-card"><span>Hover- Location Information Box</span></div>
-<div class="location-card"><span>Hover- Location Information Box</span></div>
-<div class="location-card"><span>Hover- Location Information Box</span></div>
-<div class="location-card"><span>Hover- Location Information Box</span></div>
-<div class="location-card"><span>Hover- Location Information Box</span></div>
-<div class="location-card"><span>Hover- Location Information Box</span></div>
-<div class="location-card"><span>Hover- Location Information Box</span></div>
-<div class="location-card"><span>Hover- Location Information Box</span></div>
-<div class="location-card"><span>Hover- Location Information Box</span></div>
-</div>
-</div>
-
-</div>
-
-<!-- Right: Sticky cards -->
-<div>
-<div class="sticky-stack">
-<div class="info-box" data-reveal="fade-left">
-<h4>Cafe Hours</h4>
-<div class="text-lines">
-<div class="tl" style="width:80%"></div><div class="tl" style="width:60%"></div>
-</div>
-</div>
-<div class="info-box" data-reveal="fade-left" data-reveal-delay="100">
-<div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
-<div class="kpi-num" style="font-size:28px;color:var(--cyan)">11</div>
-<div class="kpi-label" style="color:var(--navy);font-size:12px">Cafes</div>
-</div>
-<div class="img-placeholder" style="aspect-ratio:1.6/1;margin-bottom:12px"><span>KPI Over Image</span></div>
-<div style="font-family:var(--font-head);font-weight:800;font-size:12px;color:var(--navy);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:10px">Find Your Cafe</div>
-<div class="text-lines" style="margin-bottom:12px">
-<div class="tl" style="width:90%"></div><div class="tl" style="width:65%"></div>
-</div>
-<a href="#" class="cta-btn cta-primary" style="font-size:10px;padding:10px 18px;width:100%;justify-content:center">Find Your Cafe →</a>
-</div>
-</div>
-</div>
-
-</div>
-</div>
-
-<hr class="dashed-break">
-
-<!-- Friendship Cafe FAQ -->
-<div class="faq-section" style="margin-bottom:48px">
-<div class="section-title" style="margin-bottom:20px" data-reveal="fade-up">Friendship Cafe — Frequently Asked Questions</div>
-<div class="faq-item" data-reveal="fade-up">
-<div class="faq-q">What is a Friendship Cafe?</div>
-<div class="faq-a"><div class="text-lines"><div class="tl" style="width:100%"></div><div class="tl" style="width:85%"></div><div class="tl" style="width:60%"></div></div></div>
-</div>
-<div class="faq-item" data-reveal="fade-up">
-<div class="faq-q">Where are Friendship Cafes located?</div>
-<div class="faq-a"><div class="text-lines"><div class="tl" style="width:100%"></div><div class="tl" style="width:88%"></div><div class="tl" style="width:70%"></div></div></div>
-</div>
-<div class="faq-item" data-reveal="fade-up">
-<div class="faq-q">Do I need to register to eat at a Friendship Cafe?</div>
-<div class="faq-a"><div class="text-lines"><div class="tl" style="width:100%"></div><div class="tl" style="width:90%"></div><div class="tl" style="width:55%"></div></div></div>
-</div>
-<div class="faq-item" data-reveal="fade-up">
-<div class="faq-q">Can I volunteer at a Friendship Cafe?</div>
-<div class="faq-a"><div class="text-lines"><div class="tl" style="width:100%"></div><div class="tl" style="width:82%"></div><div class="tl" style="width:65%"></div></div></div>
-</div>
-</div>
-
-<div class="page-break"></div>
-
-<!-- Resources + Contact -->
-<div class="section">
-<div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px" data-reveal="fade-up">
+<div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:36px" data-reveal="fade-up">
 <div class="section-title" style="margin-bottom:0">Resources Beyond Our Services</div>
-<a href="Get_Meals-Client_Resources_Confirm.html" class="cta-btn cta-primary">Find Resources in Our Community →</a>
+<a href="Get_Meals-Client_Resources_Confirm.html" class="cta-btn cta-primary">Find Community Resources →</a>
 </div>
-</div>
-
 <div class="page-break"></div>
-
-<div style="text-align:center;margin-bottom:48px" data-reveal="fade-up">
-<div class="section-title" style="margin-bottom:16px">Contact Us</div>
+<div style="text-align:center" data-reveal="fade-up">
+<div class="section-title" style="margin-bottom:12px">Have Questions?</div>
 <div class="text-lines" style="align-items:center;margin-bottom:20px">
-<div class="tl" style="width:50%"></div><div class="tl" style="width:35%"></div>
+<div class="tl" style="width:45%"></div><div class="tl" style="width:30%"></div>
 </div>
-<a href="#" class="cta-btn cta-secondary">Get in Touch →</a>
+<a href="About_Us-Contact_Us_Confirm.html" class="cta-btn cta-secondary">Contact Us →</a>
+</div>
 </div>
 
-</div>
+</div><!-- end .page -->
 
 <!-- Footer -->
 <footer class="footer">

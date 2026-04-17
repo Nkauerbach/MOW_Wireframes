@@ -11,14 +11,44 @@
 .endowment-card{background:var(--navy);border-radius:12px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;gap:0;margin-bottom:48px}
 .endowment-text{padding:40px 36px;display:flex;flex-direction:column;justify-content:center}
 .endowment-text h3{font-family:var(--font-head);font-weight:900;font-size:20px;color:var(--white);text-transform:uppercase;letter-spacing:2px;margin-bottom:16px}
-.charity-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start;margin-bottom:32px}
-.name-block{display:flex;align-items:center;gap:16px;margin-top:16px}
-.name-block .avatar{width:48px;height:48px;border-radius:50%;background:var(--gray-light);flex-shrink:0}
-.name-block .name-info{display:flex;flex-direction:column;gap:4px}
-.name-bar{height:10px;background:var(--gray-mid);border-radius:3px;opacity:.35}
+
+/* ── Our Commitment Card ── */
+.commit-card{background:var(--white);border-radius:14px;box-shadow:0 2px 20px rgba(0,0,0,.07);padding:40px 36px;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center}
+.commit-text{display:flex;flex-direction:column;gap:0}
+/* ── Pie Chart Card ── */
+.pie-card{background:var(--white);border-radius:14px;box-shadow:0 2px 20px rgba(0,0,0,.07);padding:36px 40px;display:flex;align-items:center;gap:48px}
+.pie-wrap{display:flex;align-items:center;gap:32px;flex:1}
+.pie-legend{display:flex;flex-direction:column;gap:10px;min-width:220px}
+.pie-legend-item{display:flex;align-items:center;gap:10px;font-family:var(--font-body);font-size:13px;font-weight:600;color:var(--navy)}
+.pie-dot{width:11px;height:11px;border-radius:50%;flex-shrink:0}
+.pie-title{font-family:var(--font-head);font-weight:900;font-size:16px;color:var(--navy);text-transform:uppercase;letter-spacing:2px;margin-bottom:6px}
+
+/* ── FundraiseUp Widget Mock ── */
+.fu-card{background:var(--navy);border-radius:12px;padding:22px 20px;display:flex;flex-direction:column;gap:10px}
+.fu-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:2px}
+.fu-label{font-family:var(--font-head);font-weight:900;font-size:11px;color:rgba(255,255,255,.5);letter-spacing:1.5px;text-transform:uppercase}
+.fu-brand{font-family:var(--font-head);font-weight:900;font-size:14px;color:var(--cyan);letter-spacing:.5px}
+.fu-toggle{display:flex;background:rgba(255,255,255,.1);border-radius:8px;overflow:hidden}
+.fu-toggle-btn{flex:1;padding:7px 4px;font-family:var(--font-body);font-size:10.5px;font-weight:700;color:rgba(255,255,255,.5);border:none;background:transparent;cursor:pointer;text-align:center}
+.fu-toggle-btn.active{background:var(--cyan);color:var(--white)}
+.fu-amounts{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.fu-amt{background:rgba(255,255,255,.1);border:1.5px solid transparent;border-radius:7px;padding:8px 4px;font-family:var(--font-head);font-weight:800;font-size:12px;color:var(--white);text-align:center;cursor:pointer;transition:border-color .15s}
+.fu-amt.selected{border-color:var(--cyan);background:rgba(0,183,196,.18)}
+.fu-custom{background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.18);border-radius:7px;padding:8px 12px;font-family:var(--font-body);font-size:11px;color:rgba(255,255,255,.35);display:flex;align-items:center;gap:6px}
+.fu-donate-btn{background:var(--lime);color:var(--navy);border:none;border-radius:8px;padding:12px;font-family:var(--font-head);font-weight:900;font-size:12px;letter-spacing:1.2px;text-transform:uppercase;cursor:pointer;text-align:center;width:100%;margin-top:2px}
+
+/* ── Giving Circles Split Card ── */
+.giving-split{background:var(--white);border-radius:14px;box-shadow:0 2px 20px rgba(0,0,0,.07);overflow:hidden;display:grid;grid-template-columns:0.9fr 1fr}
+.giving-img-col{position:relative;min-height:340px}
+.giving-img-col .img-placeholder{height:100%;border-radius:0;position:absolute;inset:0}
+.giving-kpi-badge{position:absolute;bottom:24px;left:24px;background:var(--navy);border-radius:10px;padding:14px 20px;text-align:center;box-shadow:0 4px 16px rgba(0,0,0,.3)}
+.giving-kpi-badge .kn{font-family:var(--font-head);font-weight:900;font-size:30px;color:var(--cyan);line-height:1}
+.giving-kpi-badge .kl{font-family:var(--font-body);font-size:10px;font-weight:600;color:rgba(255,255,255,.7);letter-spacing:.8px;text-transform:uppercase;margin-top:5px}
+.giving-text-col{padding:44px 40px;display:flex;flex-direction:column;justify-content:center;gap:16px}
+
 @media(max-width:768px){
-  .endowment-card{grid-template-columns:1fr}
-  .charity-grid{grid-template-columns:1fr}
+  .endowment-card,.commit-card,.giving-split{grid-template-columns:1fr}
+  .giving-img-col{min-height:220px;position:relative}
 }
 </style>
 </head>
@@ -36,10 +66,11 @@
 <div class="nav-center">
 <div class="nav-item"><a href="About_Us-OurMission_Confirm.html">About Us <span class="diamond"></span></a>
 <div class="dropdown">
-<a href="About_Us-StaffAndBoard_Confirm.html"><span class="diamond"></span> Staff and Board</a>
 <a href="About_Us-OurImpact_Confirm.html"><span class="diamond"></span> Our Impact</a>
+<a href="About_Us-StaffAndBoard_Confirm.html"><span class="diamond"></span> Staff and Board</a>
 <a href="About_Us-AnnualReports_Confirm.html"><span class="diamond"></span> Annual Reports</a>
-<a href="News-Government_Impact_Confirm.html"><span class="diamond"></span> Government Impact</a>
+<a href="About_Us-Contact_Us_Confirm.html"><span class="diamond"></span> Contact Us</a>
+
 </div></div>
 <div class="nav-item"><a href="Get_Meals-Meal_Delivery_Confirm.html">Client Services <span class="diamond"></span></a>
 <div class="dropdown">
@@ -62,6 +93,7 @@
 <div class="dropdown">
 <a href="News-Direct_Confirm.html"><span class="diamond"></span> Stories</a>
 <a href="News-Events_Confirm.html"><span class="diamond"></span> Current Events</a>
+<a href="News-Government_Impact_Confirm.html"><span class="diamond"></span> Government Impact</a>
 </div></div>
 </div>
 <div class="nav-ctas"><a href="Ways_to_Give-Donate_Today_Draft.html" class="btn btn-donate">Donate</a><a href="Volunteer-Volunteer_Application_Draft.html" class="btn btn-volunteer">Volunteer</a></div>
@@ -75,61 +107,95 @@
 
 <!-- ===== MAKE A GIFT IMAGE ===== -->
 <div class="section">
-<div class="img-placeholder" style="aspect-ratio:2.2/1"><span>Make a Gift</span></div>
+<div class="img-placeholder" style="aspect-ratio:2.2/1" data-reveal="zoom-in"><span>Make a Gift</span></div>
 </div>
 
 <div class="page-break"></div>
 
 <!-- ===== OUR COMMITMENT ===== -->
 <div class="section">
-<div class="section-title">Our Commitment</div>
-<div class="text-lines" style="margin-bottom:24px">
-<div class="tl" style="width:100%"></div><div class="tl" style="width:92%"></div><div class="tl" style="width:85%"></div><div class="tl" style="width:78%"></div>
-</div>
-<div class="kpi-box" style="max-width:320px;margin-bottom:24px">
-<div class="kpi-num">$6.52</div>
-<div class="kpi-label">Average Cost Per Meal</div>
-</div>
-<div class="text-lines">
-<div class="tl" style="width:100%"></div><div class="tl" style="width:88%"></div><div class="tl" style="width:70%"></div>
-</div>
-</div>
 
-<div class="page-break"></div>
+  <!-- Commitment + FundraiseUp -->
+  <div class="commit-card" data-reveal="fade-up">
 
-<!-- ===== CHARITY NAVIGATOR ===== -->
-<div class="section">
-<div class="charity-grid">
-<div>
-<div class="section-title" style="font-size:18px">Charity Navigator Rating</div>
-<div class="text-lines" style="margin-bottom:16px">
-<div class="tl" style="width:100%"></div><div class="tl" style="width:90%"></div><div class="tl" style="width:82%"></div><div class="tl" style="width:75%"></div>
-</div>
-<div class="text-lines">
-<div class="tl" style="width:100%"></div><div class="tl" style="width:85%"></div><div class="tl" style="width:60%"></div>
-</div>
-</div>
-<div>
-<div class="text-lines" style="margin-bottom:16px">
-<div class="tl" style="width:100%"></div><div class="tl" style="width:95%"></div><div class="tl" style="width:88%"></div>
-</div>
-<!-- Name / Age / Role block -->
-<div class="name-block">
-<div class="avatar"></div>
-<div class="name-info">
-<div class="name-bar" style="width:120px"></div>
-<div class="name-bar" style="width:80px;height:8px"></div>
-</div>
-</div>
-</div>
-</div>
+    <!-- Left: Commitment copy -->
+    <div class="commit-text">
+      <div class="section-title" style="font-size:19px;margin-bottom:16px">Our Commitment</div>
+      <div class="text-lines" style="margin-bottom:18px">
+        <div class="tl" style="width:100%"></div><div class="tl" style="width:93%"></div><div class="tl" style="width:86%"></div><div class="tl" style="width:79%"></div><div class="tl" style="width:91%"></div><div class="tl" style="width:70%"></div>
+      </div>
+      <div class="kpi-box" style="border-radius:10px;max-width:100%">
+        <div class="kpi-num">$6.52</div>
+        <div class="kpi-label">Average Cost Per Meal</div>
+      </div>
+    </div>
+
+    <!-- Right: FundraiseUp widget mock -->
+    <div class="fu-card">
+      <div class="fu-header">
+        <div class="fu-label">Donate via</div>
+        <div class="fu-brand">FundraiseUp</div>
+      </div>
+      <div class="fu-toggle">
+        <div class="fu-toggle-btn active">One-Time</div>
+        <div class="fu-toggle-btn">Monthly</div>
+      </div>
+      <div class="fu-amounts">
+        <div class="fu-amt">$25</div>
+        <div class="fu-amt selected">$50</div>
+        <div class="fu-amt">$100</div>
+        <div class="fu-amt">$250</div>
+        <div class="fu-amt">$500</div>
+        <div class="fu-amt">$1,000</div>
+      </div>
+      <div class="fu-custom">
+        <span style="color:rgba(255,255,255,.35);font-size:13px;line-height:1">$</span>
+        <span>Custom Amount</span>
+      </div>
+      <button class="fu-donate-btn">Donate Now →</button>
+    </div>
+
+  </div>
+
+  <!-- Pie Chart — separate card below -->
+  <div class="pie-card" style="margin-top:20px" data-reveal="fade-up">
+    <div class="pie-wrap">
+      <div style="position:relative;width:180px;height:180px;flex-shrink:0">
+        <svg viewBox="-3 -3 42 42" width="180" height="180" style="transform:rotate(-90deg)">
+          <circle cx="18" cy="18" r="15.9" fill="none" stroke="var(--gray-light)" stroke-width="5.5"/>
+          <circle cx="18" cy="18" r="15.9" fill="none" stroke="var(--cyan)" stroke-width="5.5" stroke-dasharray="82 18" stroke-dashoffset="25" stroke-linecap="round"/>
+          <circle cx="18" cy="18" r="15.9" fill="none" stroke="var(--lime)" stroke-width="5.5" stroke-dasharray="12 88" stroke-dashoffset="-57" stroke-linecap="round"/>
+          <circle cx="18" cy="18" r="15.9" fill="none" stroke="var(--coral)" stroke-width="5.5" stroke-dasharray="6 94" stroke-dashoffset="-69" stroke-linecap="round"/>
+        </svg>
+        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;pointer-events:none">
+          <div style="font-family:var(--font-head);font-weight:900;font-size:26px;color:var(--navy);line-height:1">82%</div>
+          <div style="font-family:var(--font-body);font-size:11px;font-weight:600;color:var(--gray-mid);margin-top:4px">To Programs</div>
+        </div>
+      </div>
+      <div class="pie-legend">
+        <div class="pie-legend-item"><div class="pie-dot" style="background:var(--cyan)"></div>82% — Program Services</div>
+        <div class="pie-legend-item"><div class="pie-dot" style="background:var(--lime)"></div>12% — Support Services</div>
+        <div class="pie-legend-item"><div class="pie-dot" style="background:var(--coral)"></div>6% — Administration</div>
+      </div>
+    </div>
+    <div style="flex:1;border-left:1px solid var(--gray-light);padding-left:48px">
+      <div class="pie-title">Where Your Donation Goes</div>
+      <div class="text-lines" style="margin-bottom:16px">
+        <div class="tl" style="width:100%"></div><div class="tl" style="width:90%"></div><div class="tl" style="width:82%"></div><div class="tl" style="width:75%"></div>
+      </div>
+      <div class="text-lines">
+        <div class="tl" style="width:100%"></div><div class="tl" style="width:85%"></div><div class="tl" style="width:65%"></div>
+      </div>
+    </div>
+  </div>
+
 </div>
 
 <div class="page-break"></div>
 
 <!-- ===== ENDOWMENT / FUNDRAISING ONLINE ===== -->
 <div class="section">
-<div class="endowment-card">
+<div class="endowment-card" data-reveal="fade-up">
 <div class="endowment-text">
 <h3>Endowment</h3>
 <div style="font-family:var(--font-body);font-size:14px;color:rgba(255,255,255,.7);margin-bottom:20px;line-height:1.6">
@@ -149,12 +215,32 @@
 
 <!-- ===== LEARN ABOUT OUR GIVING CIRCLES ===== -->
 <div class="section">
-<div class="section-title">Learn About Our Giving Circles</div>
-<div class="text-lines" style="margin-bottom:24px">
-<div class="tl" style="width:100%"></div><div class="tl" style="width:88%"></div><div class="tl" style="width:72%"></div>
-</div>
-<div style="display:flex;gap:16px;flex-wrap:wrap">
-<a href="Ways_to_Give-Giving_Circles_Draft.html" class="cta-btn cta-primary">Explore Giving Circles →</a>
+<div class="giving-split" data-reveal="fade-up">
+
+  <!-- Left: Emotional image + KPI badge -->
+  <div class="giving-img-col">
+    <div class="img-placeholder" style="border-radius:0"><span>Giving Circle Member</span></div>
+    <div class="giving-kpi-badge">
+      <div class="kn">340+</div>
+      <div class="kl">Active Members</div>
+    </div>
+  </div>
+
+  <!-- Right: Intro blurb -->
+  <div class="giving-text-col">
+    <div class="section-title" style="font-size:19px;margin-bottom:4px">Our Giving Circles</div>
+    <div style="font-family:var(--font-head);font-weight:700;font-size:12px;color:var(--cyan);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:16px">A Community of Committed Donors</div>
+    <div class="text-lines" style="margin-bottom:10px">
+      <div class="tl" style="width:100%"></div><div class="tl" style="width:93%"></div><div class="tl" style="width:87%"></div><div class="tl" style="width:80%"></div>
+    </div>
+    <div class="text-lines" style="margin-bottom:24px">
+      <div class="tl" style="width:100%"></div><div class="tl" style="width:90%"></div><div class="tl" style="width:75%"></div><div class="tl" style="width:60%"></div>
+    </div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap">
+      <a href="Ways_to_Give-Giving_Circles_Draft.html" class="cta-btn cta-primary">Explore Giving Circles →</a>
+    </div>
+  </div>
+
 </div>
 </div>
 

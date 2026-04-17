@@ -148,6 +148,69 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  /* ── 7. Accessibility Widget Panel ─────────────────────────── */
+  const a11yWidget = document.querySelector('.a11y-widget');
+  if (a11yWidget) {
+    // Build panel
+    const panel = document.createElement('div');
+    panel.className = 'a11y-panel';
+    panel.setAttribute('role', 'dialog');
+    panel.setAttribute('aria-label', 'Accessibility Settings');
+    panel.innerHTML = `
+      <div class="a11y-panel-header">
+        <div class="a11y-panel-title">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><circle cx="12" cy="3.5" r="2.3"/><path d="M4.8 9.8L6.2 12C7.6 11.1 9.7 10.5 12 10.5s4.4.6 5.8 1.5l1.4-2.2C17.5 8.8 14.8 8 12 8s-5.5.8-7.2 1.8z"/><path d="M10.2 12.5L8.5 20h2.2l1.3-4.2L10.2 12.5z"/><path d="M13.8 12.5l1.7 7.5h-2.2l-1.3-4.2 1.8-3.3z"/><rect x="9" y="11.5" width="6" height="2" rx="1"/></svg>
+          Accessibility Settings
+        </div>
+        <button class="a11y-panel-close" aria-label="Close accessibility panel">✕</button>
+      </div>
+      <div class="a11y-panel-grid">
+        <div class="a11y-size-row">
+          <button class="a11y-size-btn" aria-label="Decrease text size">−</button>
+          <div class="a11y-size-label">Text Size</div>
+          <button class="a11y-size-btn" aria-label="Increase text size">+</button>
+        </div>
+        <button class="a11y-btn">Text Spacing</button>
+        <button class="a11y-btn">Dyslexia-Friendly Font</button>
+        <button class="a11y-btn">Reading Mask</button>
+        <button class="a11y-btn">Low Saturation</button>
+        <button class="a11y-btn">High Saturation</button>
+        <button class="a11y-btn">Large Cursor</button>
+        <button class="a11y-btn">Highlight Links / Buttons</button>
+      </div>
+      <div class="a11y-section-label">Colorblind Mode</div>
+      <select class="a11y-select" aria-label="Colorblind mode">
+        <option>No Colorblindness</option>
+        <option>Protanopia</option>
+        <option>Deuteranopia</option>
+        <option>Tritanopia</option>
+      </select>
+      <div class="a11y-reset-row">
+        <button class="a11y-reset">Reset</button>
+        <div class="a11y-credit">Accessibility by the<br><u><strong>Digital Impact Project</strong></u></div>
+      </div>
+    `;
+    document.body.appendChild(panel);
+
+    // Toggle open/close on widget click
+    a11yWidget.addEventListener('click', (e) => {
+      e.stopPropagation();
+      panel.classList.toggle('open');
+    });
+
+    // Close button
+    panel.querySelector('.a11y-panel-close').addEventListener('click', () => {
+      panel.classList.remove('open');
+    });
+
+    // Close when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.a11y-panel') && !e.target.closest('.a11y-widget')) {
+        panel.classList.remove('open');
+      }
+    });
+  }
+
   /* ── 6. Scroll Reveal Animations ───────────────────────────── */
   const revealEls = document.querySelectorAll('[data-reveal]');
   if (revealEls.length) {

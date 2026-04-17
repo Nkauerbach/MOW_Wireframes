@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MOW Wake County — Contact Us</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+/* ── Contact Method Cards ── */
+.contact-method-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.contact-method-card{background:var(--white);border-radius:12px;padding:30px 26px;box-shadow:0 2px 16px rgba(0,0,0,.06);border-top:4px solid var(--cyan)}
+.contact-icon-wrap{width:46px;height:46px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.contact-card-label{font-family:var(--font-head);font-weight:900;font-size:13px;color:var(--navy);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px}
+
+/* ── Form fields styled like Eligibility Quiz ── */
+.form-wrap{background:var(--white);border-radius:12px;padding:32px 28px;box-shadow:0 2px 16px rgba(0,0,0,.06)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:18px}
+.eq-label{font-family:var(--font-head);font-weight:800;font-size:11px;color:var(--navy);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px}
+.eq-input{padding:12px 16px;border:2px solid var(--gray-light);border-radius:8px;font-family:var(--font-body);font-size:13px;color:var(--gray-mid);display:flex;align-items:center;gap:8px;min-height:44px;background:var(--white);transition:border-color .2s}
+.eq-input:hover{border-color:var(--cyan)}
+.eq-input.tall{min-height:100px;align-items:flex-start;padding-top:14px}
+.eq-input.select-field{justify-content:space-between}
+.eq-placeholder{opacity:.55;font-style:italic}
+.eq-select-arrow{width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top:6px solid var(--gray-mid);opacity:.5;flex-shrink:0}
+
+/* ── Right sticky info panel ── */
+.contact-sticky{position:sticky;top:148px;display:flex;flex-direction:column;gap:16px}
+.contact-info-card{background:var(--navy);border-radius:14px;padding:28px 24px}
+.ci-section{margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,.1)}
+.ci-section:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none}
+.ci-label{font-family:var(--font-head);font-weight:900;font-size:10px;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:1.8px;margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.ci-value{font-family:var(--font-body);font-size:13px;color:rgba(255,255,255,.85);line-height:1.75}
+.ci-value a{color:var(--cyan);text-decoration:none}
+.ci-ein{font-family:var(--font-head);font-weight:700;font-size:11px;color:rgba(255,255,255,.35);letter-spacing:1.5px;margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,.08)}
+.mission-card{background:var(--white);border-radius:12px;padding:24px 22px;box-shadow:0 2px 16px rgba(0,0,0,.06);display:flex;flex-direction:column;gap:14px}
+.mission-card-img{aspect-ratio:2.2/1;border-radius:8px;overflow:hidden}
+</style>
+</head>
+<body>
+
+<div class="a11y-widget" title="Accessibility Options">
+<svg width="28" height="28" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="3.5" r="2.3"/><path d="M4.8 9.8L6.2 12C7.6 11.1 9.7 10.5 12 10.5s4.4.6 5.8 1.5l1.4-2.2C17.5 8.8 14.8 8 12 8s-5.5.8-7.2 1.8z"/><path d="M10.2 12.5L8.5 20h2.2l1.3-4.2L10.2 12.5z"/><path d="M13.8 12.5l1.7 7.5h-2.2l-1.3-4.2 1.8-3.3z"/><rect x="9" y="11.5" width="6" height="2" rx="1"/></svg>
+</div>
+
+<nav class="navbar">
+<div class="nav-inner">
+<a href="About_Us-OurMission_Confirm.html" class="nav-logo-box"><div class="nav-logo-badge">Meals on Wheels<br>Wake County</div><span class="nav-phone">(919) 735-1660</span></a>
+<div class="nav-center">
+<div class="nav-item active"><a href="About_Us-OurMission_Confirm.html">About Us <span class="diamond"></span></a>
+<div class="dropdown">
+<a href="About_Us-OurImpact_Confirm.html"><span class="diamond"></span> Our Impact</a>
+<a href="About_Us-StaffAndBoard_Confirm.html"><span class="diamond"></span> Staff and Board</a>
+<a href="About_Us-AnnualReports_Confirm.html"><span class="diamond"></span> Annual Reports</a>
+<a href="About_Us-Contact_Us_Confirm.html" class="active-child"><span class="diamond"></span> Contact Us</a>
+</div></div>
+<div class="nav-item"><a href="Get_Meals-Meal_Delivery_Confirm.html">Client Services <span class="diamond"></span></a>
+<div class="dropdown">
+<a href="Get_Meals-Meal_Delivery_Confirm.html"><span class="diamond"></span> Browse Menus</a>
+<a href="Get_Meals-Application_Services_Confirm.html"><span class="diamond"></span> Apply to Services</a>
+<a href="Get_Meals-Client_Resources_Confirm.html"><span class="diamond"></span> Client Resources</a>
+</div></div>
+<div class="nav-item"><a href="Volunteer-Volunteer_Application_Draft.html">Volunteer With Us <span class="diamond"></span></a>
+<div class="dropdown">
+<a href="Volunteer-Volunteer_Application_Draft.html"><span class="diamond"></span> Apply to Volunteer</a>
+<a href="Volunteer-Volunteer_Resources_Confirm.html"><span class="diamond"></span> Volunteer Resources</a>
+</div></div>
+<div class="nav-item"><a href="Ways_to_Give-Donate_Today_Draft.html">Donate <span class="diamond"></span></a>
+<div class="dropdown">
+<a href="Ways_to_Give-Donate_Today_Draft.html"><span class="diamond"></span> Donate Today</a>
+<a href="Ways_to_Give-Workplace_Giving_Draft.html"><span class="diamond"></span> Ways to Give</a>
+<a href="Ways_to_Give-Giving_Circles_Draft.html"><span class="diamond"></span> Giving Circles</a>
+</div></div>
+<div class="nav-item"><a href="News-Direct_Confirm.html">News &amp; Events <span class="diamond"></span></a>
+<div class="dropdown">
+<a href="News-Direct_Confirm.html"><span class="diamond"></span> Stories</a>
+<a href="News-Events_Confirm.html"><span class="diamond"></span> Current Events</a>
+<a href="News-Government_Impact_Confirm.html"><span class="diamond"></span> Government Impact</a>
+</div></div>
+</div>
+<div class="nav-ctas"><a href="Ways_to_Give-Donate_Today_Draft.html" class="btn btn-donate">Donate</a><a href="Volunteer-Volunteer_Application_Draft.html" class="btn btn-volunteer">Volunteer</a></div>
+</div>
+</nav>
+
+<div class="page">
+
+<!-- ── Page Title ── -->
+<div class="section">
+<div style="display:flex;align-items:center;gap:14px;margin-bottom:14px" data-reveal="fade-up">
+<div style="height:4px;width:40px;background:var(--cyan);border-radius:2px"></div>
+<div style="font-family:var(--font-head);font-weight:700;font-size:11px;color:var(--cyan);text-transform:uppercase;letter-spacing:2px">About Us</div>
+</div>
+<div class="section-title" style="font-size:30px;margin-bottom:14px" data-reveal="fade-up">Contact Us</div>
+<div class="text-lines" style="max-width:580px" data-reveal="fade-up" data-reveal-delay="100">
+<div class="tl" style="width:100%"></div><div class="tl" style="width:90%"></div><div class="tl" style="width:75%"></div>
+</div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ── 3 Contact Method Cards ── -->
+<div class="section">
+<div class="contact-method-grid" data-reveal="fade-up">
+
+  <!-- Our Location -->
+  <div class="contact-method-card">
+    <div class="contact-icon-wrap">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+    </div>
+    <div class="contact-card-label">Our Location</div>
+    <div class="text-lines" style="margin-bottom:14px">
+      <div class="tl" style="width:80%"></div><div class="tl" style="width:65%"></div>
+    </div>
+    <div style="font-family:var(--font-body);font-size:12.5px;color:#555;line-height:1.7">1001 Blair Drive<br>Raleigh, NC 27603</div>
+    <div style="margin-top:16px">
+      <a href="#" class="cta-btn cta-secondary" style="font-size:10px;padding:9px 18px">Get Directions →</a>
+    </div>
+  </div>
+
+  <!-- Phone & Email -->
+  <div class="contact-method-card">
+    <div class="contact-icon-wrap">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.14 12 19.79 19.79 0 0 1 1.07 3.4 2 2 0 0 1 3.07 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91A16 16 0 0 0 13 14.83l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16v.92z"/></svg>
+    </div>
+    <div class="contact-card-label">Phone &amp; Email</div>
+    <div class="text-lines" style="margin-bottom:14px">
+      <div class="tl" style="width:75%"></div><div class="tl" style="width:60%"></div>
+    </div>
+    <div style="font-family:var(--font-body);font-size:12.5px;color:#555;line-height:1.7">(###) ###-####<br><span style="color:var(--cyan)">info@wakemow.org</span></div>
+  </div>
+
+  <!-- Kitchen Hours -->
+  <div class="contact-method-card">
+    <div class="contact-icon-wrap">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+    </div>
+    <div class="contact-card-label">Kitchen Hours</div>
+    <div class="text-lines" style="margin-bottom:14px">
+      <div class="tl" style="width:85%"></div><div class="tl" style="width:68%"></div><div class="tl" style="width:58%"></div>
+    </div>
+    <div style="font-family:var(--font-body);font-size:12.5px;color:#555;line-height:1.7">Mon – Fri<br>6:00 AM – 2:00 PM</div>
+  </div>
+
+</div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ── Form (left) + Sticky Info Panel (right) ── -->
+<div class="section">
+<div style="display:grid;grid-template-columns:1.3fr 1fr;gap:36px;align-items:start">
+
+  <!-- ══ LEFT COLUMN ══ -->
+  <div style="display:flex;flex-direction:column;gap:28px" data-reveal="fade-right">
+
+    <!-- Send Us a Message — quiz-style fields -->
+    <div>
+      <div class="section-title" style="font-size:20px;margin-bottom:20px">Send Us a Message</div>
+      <div class="form-wrap">
+
+        <!-- Name + Email -->
+        <div class="form-row">
+          <div>
+            <div class="eq-label">Full Name</div>
+            <div class="eq-input"><span class="eq-placeholder">Your full name</span></div>
+          </div>
+          <div>
+            <div class="eq-label">Email Address</div>
+            <div class="eq-input"><span class="eq-placeholder">you@email.com</span></div>
+          </div>
+        </div>
+
+        <!-- Phone + Subject -->
+        <div class="form-row">
+          <div>
+            <div class="eq-label">Phone Number</div>
+            <div class="eq-input"><span class="eq-placeholder">(###) ###-####</span></div>
+          </div>
+          <div>
+            <div class="eq-label">Subject</div>
+            <div class="eq-input"><span class="eq-placeholder">Brief subject</span></div>
+          </div>
+        </div>
+
+        <!-- Topic dropdown -->
+        <div style="margin-bottom:18px">
+          <div class="eq-label">Reason for Contact</div>
+          <div class="eq-input select-field">
+            <span class="eq-placeholder">Select a topic…</span>
+            <div class="eq-select-arrow"></div>
+          </div>
+        </div>
+
+        <!-- Message -->
+        <div style="margin-bottom:24px">
+          <div class="eq-label">Your Message</div>
+          <div class="eq-input tall"><span class="eq-placeholder">Write your message here…</span></div>
+        </div>
+
+        <a href="#" class="cta-btn cta-primary" style="font-size:13px;padding:14px 32px">Send Message →</a>
+
+      </div>
+    </div>
+
+    <!-- Blair Drive Facility Image -->
+    <div>
+      <div style="font-family:var(--font-head);font-weight:800;font-size:11px;color:var(--gray-mid);text-transform:uppercase;letter-spacing:1.8px;margin-bottom:10px">Blair Drive Kitchen &amp; Facility</div>
+      <div class="img-placeholder" style="aspect-ratio:2.2/1;border-radius:12px"><span>Blair Drive Facility — 1001 Blair Drive</span></div>
+    </div>
+
+    <!-- Staff Image -->
+    <div>
+      <div style="font-family:var(--font-head);font-weight:800;font-size:11px;color:var(--gray-mid);text-transform:uppercase;letter-spacing:1.8px;margin-bottom:10px">Our Staff</div>
+      <div class="img-placeholder" style="aspect-ratio:2.4/1;border-radius:12px"><span>Staff Photo</span></div>
+    </div>
+
+  </div>
+
+  <!-- ══ RIGHT COLUMN — Sticky Info Panel ══ -->
+  <div data-reveal="fade-left">
+  <div class="contact-sticky">
+
+    <!-- Navy Info Card -->
+    <div class="contact-info-card">
+
+      <div style="font-family:var(--font-head);font-weight:900;font-size:14px;color:var(--white);text-transform:uppercase;letter-spacing:2px;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,.12)">Blair Drive Kitchen</div>
+
+      <!-- Address -->
+      <div class="ci-section">
+        <div class="ci-label">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Address
+        </div>
+        <div class="ci-value">
+          Meals on Wheels of Wake County<br>
+          1001 Blair Drive<br>
+          Raleigh, NC 27603
+        </div>
+      </div>
+
+      <!-- Phone & Email -->
+      <div class="ci-section">
+        <div class="ci-label">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.14 12 19.79 19.79 0 0 1 1.07 3.4 2 2 0 0 1 3.07 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91A16 16 0 0 0 13 14.83l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16v.92z"/></svg>
+          Contact
+        </div>
+        <div class="ci-value">
+          <a href="#">(###) ###-####</a><br>
+          <a href="#">info@wakemow.org</a>
+        </div>
+      </div>
+
+      <!-- Kitchen Hours -->
+      <div class="ci-section">
+        <div class="ci-label">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Kitchen Hours
+        </div>
+        <div class="ci-value">
+          Mon – Fri&nbsp;&nbsp;6:00 AM – 2:00 PM<br>
+          <span style="color:rgba(255,255,255,.4);font-size:12px">Closed Sat, Sun &amp; Holidays</span>
+        </div>
+      </div>
+
+      <!-- Get Directions CTA -->
+      <a href="#" class="cta-btn cta-primary" style="width:100%;justify-content:center;font-size:10px;padding:11px 18px;margin-bottom:12px">Get Directions →</a>
+
+      <!-- EIN -->
+      <div class="ci-ein">EIN: 56-0891672 &nbsp;·&nbsp; IRS Registered Nonprofit</div>
+
+    </div>
+
+    <!-- Learn About Our Mission Card -->
+    <div class="mission-card">
+      <div class="mission-card-img">
+        <div class="img-placeholder" style="aspect-ratio:2.2/1;border-radius:0"><span>Mission Image</span></div>
+      </div>
+      <div>
+        <div style="font-family:var(--font-head);font-weight:900;font-size:13px;color:var(--navy);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px">Our Mission</div>
+        <div class="text-lines" style="margin-bottom:14px">
+          <div class="tl" style="width:100%"></div><div class="tl" style="width:88%"></div><div class="tl" style="width:72%"></div>
+        </div>
+        <a href="About_Us-OurMission_Confirm.html" class="cta-btn cta-secondary" style="font-size:10px;padding:10px 18px">Learn About Our Mission →</a>
+      </div>
+    </div>
+
+  </div>
+  </div>
+
+</div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ── Map — square, larger ── -->
+<div class="section" style="margin-bottom:0">
+<div class="map-placeholder" style="aspect-ratio:1/1" data-reveal="zoom-in">
+<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--gray-mid)" stroke-width="1.5" opacity=".4"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+<span style="font-family:var(--font-head);font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--gray-mid);font-weight:700">Embedded Google Map — 1001 Blair Drive, Raleigh NC</span>
+</div>
+</div>
+
+</div><!-- end .page -->
+
+<!-- Footer -->
+<footer class="footer">
+<div class="footer-top">
+<div class="footer-logos"><div class="footer-logo-box flw">Meals on Wheels<br>Wake County</div><div class="footer-logo-box fln">MOW<br>National</div></div>
+<div class="footer-contact"><p><span class="fc-icon">✉</span> Mailing Address:<br>1001 Blair Drive<br>Raleigh, NC 27603</p><p style="margin-top:10px"><span class="fc-icon">☏</span> (919) 735-1660</p></div>
+<div class="footer-nl"><h4>Our Newsletter</h4><div class="text-lines" style="margin-bottom:14px"><div class="tl" style="background:rgba(255,255,255,.15)"></div><div class="tl" style="background:rgba(255,255,255,.15);width:80%"></div></div><div class="nl-row"><input type="email" placeholder="Your email address"><button>Subscribe</button></div></div>
+<div style="display:flex;flex-direction:column;gap:12px;align-items:flex-end"><a href="Ways_to_Give-Donate_Today_Draft.html" class="cta-btn cta-primary" style="width:100%;justify-content:center;font-size:11px;padding:12px 20px">Make a Donation</a><a href="Volunteer-Volunteer_Application_Draft.html" class="cta-btn cta-secondary" style="width:100%;justify-content:center;font-size:11px;padding:12px 20px">Volunteer With Us</a></div>
+</div>
+<div class="footer-div"><hr></div>
+<div class="footer-mid"><div class="footer-left"><div class="footer-ein">EIN: 56-0891672 (IRS #)</div><div class="footer-socials"><div class="fsoc"><span>fb</span></div><div class="fsoc"><span>ig</span></div><div class="fsoc"><span>in</span></div><div class="fsoc"><span>yt</span></div></div></div></div>
+<div class="footer-bottom"><p>© 2026 Meals on Wheels — Wake County. All Rights Reserved. | Website by: Cary Digital Design</p></div>
+</footer>
+<script src="main.js"></script>
+</body>
+</html>

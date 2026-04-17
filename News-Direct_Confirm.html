@@ -8,7 +8,10 @@
 <link rel="stylesheet" href="styles.css">
 <style>
 /* Page-specific styles */
-.filter-bar{position:sticky;top:90px;z-index:800;background:var(--white);border-bottom:2px solid var(--gray-light);padding:0;margin:0 calc(var(--content-pad) * -1);display:flex;justify-content:center;gap:6px;padding:10px 24px}
+.filter-bar{position:sticky;top:90px;z-index:800;background:var(--white);border-bottom:2px solid var(--gray-light);margin:0;display:flex;justify-content:center;gap:6px;padding:10px 24px}
+.hero-card{aspect-ratio:3/1}
+.page{padding-top:20px}
+.section{margin-bottom:40px}
 .filter-chip{font-family:var(--font-head);font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:1.4px;padding:8px 20px;border-radius:20px;border:2px solid;cursor:pointer;transition:all .2s}
 .filter-all{border-color:var(--navy);background:var(--navy);color:var(--white)}
 .filter-client{border-color:var(--cyan);color:var(--cyan)}
@@ -47,10 +50,11 @@
 <div class="nav-center">
 <div class="nav-item"><a href="About_Us-OurMission_Confirm.html">About Us <span class="diamond"></span></a>
 <div class="dropdown">
-<a href="About_Us-StaffAndBoard_Confirm.html"><span class="diamond"></span> Staff and Board</a>
 <a href="About_Us-OurImpact_Confirm.html"><span class="diamond"></span> Our Impact</a>
+<a href="About_Us-StaffAndBoard_Confirm.html"><span class="diamond"></span> Staff and Board</a>
 <a href="About_Us-AnnualReports_Confirm.html"><span class="diamond"></span> Annual Reports</a>
-<a href="News-Government_Impact_Confirm.html"><span class="diamond"></span> Government Impact</a>
+<a href="About_Us-Contact_Us_Confirm.html"><span class="diamond"></span> Contact Us</a>
+
 </div></div>
 <div class="nav-item"><a href="Get_Meals-Meal_Delivery_Confirm.html">Client Services <span class="diamond"></span></a>
 <div class="dropdown">
@@ -73,15 +77,12 @@
 <div class="dropdown">
 <a href="News-Direct_Confirm.html" class="active-child"><span class="diamond"></span> Stories</a>
 <a href="News-Events_Confirm.html"><span class="diamond"></span> Current Events</a>
+<a href="News-Government_Impact_Confirm.html"><span class="diamond"></span> Government Impact</a>
 </div></div>
 </div>
 <div class="nav-ctas"><a href="Ways_to_Give-Donate_Today_Draft.html" class="btn btn-donate">Donate</a><a href="Volunteer-Volunteer_Application_Draft.html" class="btn btn-volunteer">Volunteer</a></div>
 </div>
 </nav>
-
-<div class="page">
-
-<div class="hero-card"><div class="hero-x"></div><div class="hero-label"><h1>News</h1></div></div>
 
 <!-- Sticky Filter Bar -->
 <div class="filter-bar">
@@ -91,8 +92,12 @@
 <div class="filter-chip filter-events">Events</div>
 </div>
 
+<div class="page">
+
+<div class="hero-card"><div class="hero-x"></div><div class="hero-label"><h1>News</h1></div></div>
+
 <!-- Featured Story -->
-<div class="featured-story">
+<div class="featured-story" data-reveal="fade-up">
 <div class="img-placeholder"><span>Featured Story Hero</span></div>
 <div style="padding:36px 32px;display:flex;flex-direction:column;justify-content:center">
 <div style="display:flex;gap:8px;margin-bottom:12px">
@@ -112,7 +117,7 @@
 <div class="page-break"></div>
 
 <!-- Story Grid — 3 columns -->
-<div class="story-grid">
+<div class="story-grid" data-reveal="fade-up">
 <!-- Card 1 -->
 <div class="story-card">
 <div class="story-img">
@@ -155,7 +160,7 @@
 </div>
 
 <!-- Row 2 -->
-<div class="story-grid">
+<div class="story-grid" data-reveal="fade-up">
 <div class="story-card">
 <div class="story-img">
 <div class="img-placeholder"><span>Story</span></div>
